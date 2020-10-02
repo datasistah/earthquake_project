@@ -49,7 +49,8 @@ function init() {
             latitudeValues.push(data[i].Latitude);
             longitudeValues.push(data[i].Longitude);
 
-            if (yearArray.includes(data[i].Year)) {
+            if (i === 0) {
+                yearArray.push(data[i].Year);
                 if (data[i].Magnitude >= 3.0 && data[i].Magnitude < 4.0) {
                     minorCnt += 1;
                 }
@@ -69,7 +70,34 @@ function init() {
                     greatCnt += 1;
                 }
             }
-
+            else if (i === data.length - 1) {
+                minorArray.push(minorCnt);
+                lightArray.push(lightCnt);
+                moderateArray.push(moderateCnt);
+                strongArray.push(strongCnt);
+                majorArray.push(majorCnt);
+                greatArray.push(greatCnt);
+            }
+            else if (yearArray.includes(data[i].Year)) {
+                if (data[i].Magnitude >= 3.0 && data[i].Magnitude < 4.0) {
+                    minorCnt += 1;
+                }
+                else if (data[i].Magnitude >= 4.0 && data[i].Magnitude < 5.0) {
+                    lightCnt += 1;
+                }
+                else if (data[i].Magnitude >= 5.0 && data[i].Magnitude < 6.0) {
+                    moderateCnt += 1;
+                }
+                else if (data[i].Magnitude >= 6.0 && data[i].Magnitude < 7.0) {
+                    strongCnt += 1;
+                }
+                else if (data[i].Magnitude >= 7.0 && data[i].Magnitude < 8.0) {
+                    majorCnt += 1;
+                }
+                else if (data[i].Magnitude >= 8.0) {
+                    greatCnt += 1;
+                }
+            }
             else {
                 minorArray.push(minorCnt);
                 lightArray.push(lightCnt);
@@ -226,13 +254,10 @@ function init() {
 
         var config = {mapboxAccessToken: "pk.eyJ1Ijoic3RlZmFuZWU4OCIsImEiOiJja2Y3ZTZsNTMwMWt0MnFvNHduZGRpaDk2In0.qbfCdcHGNqgJ5QNccagpug"};
 
-        //Plotly.newPlot('bar', barData);
-        //Plotly.newPlot('histogram', histogramData);
-        //Plotly.newPlot('heatmap', heatMapdata, layout, config);
-        //Plotly.newPlot('stackedbar', magnitudeData, magnitudeLayout);
-        
-        console.log(yearArray);
-        console.log(minorArray);
+        Plotly.newPlot('bar', barData);
+        Plotly.newPlot('histogram', histogramData);
+        Plotly.newPlot('heatmap', heatMapdata, layout, config);
+        Plotly.newPlot('stackedbar', magnitudeData, magnitudeLayout);
 
         });
 
