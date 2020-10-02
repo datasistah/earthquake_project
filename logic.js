@@ -246,9 +246,9 @@ function init() {
         var magnitudeData = [magnitudeMinorTrace, magnitudeLightTrace,magnitudeModerateTrace,magnitudeStrongTrace,magnitudeMajorTrace,magnitudeGreatTrace];
         
         var layout = {
-            mapbox: {center: {lon: -98.5795, lat: 39.8283}, style: "outdoors", zoom: 2},
+            mapbox: {center: {lon: -98.5795, lat: 39.8283}, style: "outdoors"},
             coloraxis: {colorscale: "Viridis"}, title: {text: "Earthquake Magnitude"},
-            width: 600, height: 400, margin: {t: 30, b: 0}};
+            margin: {t: 30, b: 0}};
 
         var magnitudeLayout = {barmode: 'stack'};
 
