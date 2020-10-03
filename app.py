@@ -41,19 +41,70 @@ def all():
 
     return jsonify(earthquakejson)
 
-# @app.route("/year/<int:year_arg>", methods=["GET"])
-# def filtered(year_arg=None):
-#     filter_data  = [] # copy
-#     if year_arg != None:
-#         filter_data = filter_data.find()
+@app.route("/filter/<year_arg>/<month_arg>/<country_arg>/<magnitude_arg>/<death_arg>/<yearmin_arg>/<yearmax_arg>", methods=["GET"])
+def filtered(year_arg=None, month_arg=None, country_arg=None, magnitude_arg=None, death_arg=None, yearmin_arg=None, yearmax_arg=None):
+    alldb = earthquake
+    
+    filter_dict = {}
 
-#     if mag != None:
-#         pass
+    if year_arg != "Select All":
+        filter_dict["Year"] = int(year_arg)
+        
+    if month_arg != "Select All":
+        if month_arg == "January":
+            filter_dict["Month"] = 1
+        elif month_arg == "February":
+            filter_dict["Month"] = 2
+        elif month_arg == "March":
+            filter_dict["Month"] = 3
+        elif month_arg == "April":
+            filter_dict["Month"] = 4
+        elif month_arg == "May":
+            filter_dict["Month"] = 5
+        elif month_arg == "June":
+            filter_dict["Month"] = 6
+        elif month_arg == "July":
+            filter_dict["Month"] = 7
+        elif month_arg == "August":
+            filter_dict["Month"] = 8
+        elif month_arg == "September":
+            filter_dict["Month"] = 9
+        elif month_arg == "October":
+            filter_dict["Month"] = 10
+        elif month_arg == "November":
+            filter_dict["Month"] = 11
+        elif month_arg == "December":
+            filter_dict["Month"] = 12
 
-#     if country != None:
-#         pass
+    if country_arg != "Select All":
+        filter_dict["Name"] = str(country_arg)
 
-#     return json_data
+    if magnitude_arg != "Select All":
+        if magnitude_arg == "minor":
+            filter_dict["Magnitude"] = {"$gte":3,"$lt":4}
+        elif magnitude_arg == "light":
+            filter_dict["Magnitude"] = {"$gte":4,"$lt":5}      
+        elif magnitude_arg == "moderate":
+            filter_dict["Magnitude"] = {"$gte":5,"$lt":6}
+        elif magnitude_arg == "strong":
+            filter_dict["Magnitude"] = {"$gte":6,"$lt":7} 
+        elif magnitude_arg == "major":
+            filter_dict["Magnitude"] = {"$gte":7,"$lt":8} 
+        else:
+            filter_dict["Magnitude"] = {"$gte":8}
+
+    if death_arg != "Select All":
+        if death_arg == "yes":
+            filter_dict["Deaths"] = {"$gt":0}
+
+    if yearmin_arg != "Select All" and yearmax_arg!= "Select All":
+        filter_dict["Year"] = {"$gte":int(yearmin_arg), "$lte":int(yearmax_arg)}
+
+    filterdata = alldb.find(filter_dict)
+
+    filteredjson = json.loads(json_util.dumps(filterdata))
+
+    return jsonify(filteredjson)
 
 
 

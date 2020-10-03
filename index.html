@@ -16,7 +16,7 @@
             <div class="container-fluid">
                 <div class="navbar-header">
                     <a class="navbar-brand" href="index.html">UFO Sightings
-                        <img class="nav-ufo" src="static/images/ufo.svg">
+                        <!--<img class="nav-ufo" src="static/images/ufo.svg">!-->
                     </a>
                 </div>
             </div>
@@ -37,19 +37,35 @@
                                         <ul class="list-group" id="filters">
                                             <li class="filter list-group-item">
                                                 <label for="datetime">Year</label>
-                                                <select id="datetime" type="text" placeholder="2015" ></select>
+                                                <select id="datetime" type="text">
+                                                  <option value="Select All">Select All</option>
+                                                </select>
                                             </li>
                                             <li class="filter list-group-item">
+                                              <label for="yearrange">Year Range</label>
+                                              <select id="yearmin" type="text">
+                                                <option value="Select All">Select All</option>
+                                              </select>
+                                              <select id="yearmax" type="text">
+                                                <option value="Select All">Select All</option>
+                                              </select>
+                                          </li>
+                                            <li class="filter list-group-item">
                                                 <label for="month">Month</label>
-                                                <select id="month" type="text" placeholder="2015" ></select>
+                                                <select id="month" type="text">
+                                                  <option value="Select All">Select All</option>
+                                                </select>
                                             </li>
                                             <li class="filter list-group-item">
                                                 <label for="country">Country</label>
-                                                <select id="country" type="text" placeholder="USA" ></select>
+                                                <select id="country" type="text" >
+                                                  <option value="Select All">Select All</option>
+                                                </select>
                                             </li>
                                             <li class="filter list-group-item">
                                                 <label for="magnitude">Magnitude Type</label>
                                                 <select id="magnitude">
+                                                    <option value="Select All">Select All</option>
                                                     <option value="minor">Minor (3-3.9)</option>
                                                     <option value="light">Light (4-4.9)</option>
                                                     <option value="moderate">Moderate (5-5.9)</option>
@@ -61,6 +77,7 @@
                                             <li class="filter list-group-item">
                                                 <label for="death">Earthquake Related Deaths (Yes/No)</label>
                                                 <select id="death">
+                                                    <option value="Select All">Select All</option>
                                                     <option value="yes">Yes</option>
                                                     <option value="no">No</option>
                                                 </select>
