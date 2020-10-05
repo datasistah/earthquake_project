@@ -5,154 +5,135 @@
     <meta charset="utf-8">
     <title>Project 2: Earthquakes</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/superhero/bootstrap.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
-    <!--<link rel="stylesheet" href="static/css/style.css">!-->
+   
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
+  
     <div class="wrapper">
-        <!-- <nav class="navbar navbar-default">
-            <div class="container-fluid">
-                <div class="navbar-header">
-                    <a class="navbar-brand" href="index.html">UFO Sightings
-                        <!--<img class="nav-ufo" src="static/images/ufo.svg">!-->
-                    </a>
-                </div>
-            </div>
-        </nav> -->
-    <div class="hero text-center">
-        <h2>Earthquakes Around the World</h2>
+        
+      <div class="hero text-center">
+        <h2 data-scrambler>Earthquakes Around the World</h2>
         <hr>
-    </div>
+      </div>
+
     <div class="container">
+
         <div class="row margin-top-50">
-            <div class="col-md-2">
-                <aside class="filters">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">Filter Search</div>
-                            <div class="panel-body">
-                                <form id="form">
-                                    <div class="form-group">
-                                        <ul class="list-group" id="filters">
-                                            <li class="filter list-group-item">
-                                                <label for="datetime">Year</label>
-                                                <select id="datetime" type="text">
-                                                  <option value="Select All">Select All</option>
-                                                </select>
-                                            </li>
-                                            <li class="filter list-group-item">
-                                              <label for="yearrange">Year Range</label>
-                                              <select id="yearmin" type="text">
-                                                <option value="Select All">Select All</option>
-                                              </select>
-                                              <select id="yearmax" type="text">
-                                                <option value="Select All">Select All</option>
-                                              </select>
-                                          </li>
-                                            <li class="filter list-group-item">
-                                                <label for="month">Month</label>
-                                                <select id="month" type="text">
-                                                  <option value="Select All">Select All</option>
-                                                </select>
-                                            </li>
-                                            <li class="filter list-group-item">
-                                                <label for="country">Country</label>
-                                                <select id="country" type="text" >
-                                                  <option value="Select All">Select All</option>
-                                                </select>
-                                            </li>
-                                            <li class="filter list-group-item">
-                                                <label for="magnitude">Magnitude Type</label>
-                                                <select id="magnitude">
-                                                    <option value="Select All">Select All</option>
-                                                    <option value="minor">Minor (3-3.9)</option>
-                                                    <option value="light">Light (4-4.9)</option>
-                                                    <option value="moderate">Moderate (5-5.9)</option>
-                                                    <option value="strong">Strong (6-6.9)</option>
-                                                    <option value="major">Major (7-7.9)</option>
-                                                    <option value="great">Great (8 or more)</option>
-                                                </select>
-                                            </li>
-                                            <li class="filter list-group-item">
-                                                <label for="death">Earthquake Related Deaths (Yes/No)</label>
-                                                <select id="death">
-                                                    <option value="Select All">Select All</option>
-                                                    <option value="yes">Yes</option>
-                                                    <option value="no">No</option>
-                                                </select>
-                                            </li>
-                    </ul>
+            <div class="col-md-12">
+                
+                                  <button class="btn btn-light btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Location
+                                    <select id="country"  type="text" >
+                                      <option class="small" value="Select All">Select All</option>
+                                    </select>
+                                  </button>
+                                  <button class="btn btn-light btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Year
+                                    <select id="datetime" type="text">
+                                      <option value="Select All">Select All</option>
+                                    </select>
+                                  </button>
+
+                                  <button class="btn btn-light btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Year Range
+                                    <select id="yearmin" type="text">
+                                      <option value="Select All">Select All</option>
+                                    </select>
+                                    <select id="yearmax" type="text">
+                                      <option value="Select All">Select All</option>
+                                    </select>
+                                  </button>
+
+                                  <button class="btn btn-light btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Month
+                                    <select id="month" type="text">
+                                      <option value="Select All">Select All</option>
+                                    </select>
+                                  </button>
+
+                                  <button class="btn btn-light btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                  Magnitude Type
+                                  <select id="magnitude">
+                                      <option value="Select All">Select All</option>
+                                      <option value="minor">Minor (3-3.9)</option>
+                                      <option value="light">Light (4-4.9)</option>
+                                      <option value="moderate">Moderate (5-5.9)</option>
+                                      <option value="strong">Strong (6-6.9)</option>
+                                      <option value="major">Major (7-7.9)</option>
+                                      <option value="great">Great (8 or more)</option>
+                                  </select>
+                                </button>
+                                
+                                <button class="btn btn-light btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                  Earthquake Related Deaths (Yes/No)
+                                  <select id="death">
+                                      <option value="Select All">Select All</option>
+                                      <option value="yes">Yes</option>
+                                      <option value="no">No</option>
+                                  </select>
+                                </button>
                   </div>
                   <button id="filter-btn" type="button" class="btn btn-default">Filter Data</button>
                   <button id="filter-btn-clear" type="reset" class="btn btn-default">Clear Filters</button>
                 </form>
               </div>
             </div>
-          </aside>
         </div>
-        <div class="col-md-10">
-          <div id="table-area" class="">
-            <table id="ufo-table" class="table table-striped">
-              <thead>
-                <tr>
-                  <th class="table-head">Year</th>
-                  <th class="table-head">Month</th>
-                  <th class="table-head">Date</th>
-                  <th class="table-head">Hours</th>
-                  <th class="table-head">Minutes</th>
-                  <th class="table-head">Tsunami</th>
-                  <th class="table-head">Country</th>
-                  <th class="table-head">Latitude</th>
-                  <th class="table-head">Longitude</th>
-                  <th class="table-head">Focal Depth (km)</th>
-                  <th class="table-head">Magnitude (Richter Scale)</th>
-                  <th class="table-head">Deaths</th>
-                  <th class="table-head">Injuries</th>
-                  <th class="table-head">Damage (in $Mill)</th>
-                </tr>
-              </thead>
-              <tbody></tbody>
-            </table>
-          </div>
-        </div>
-      </div>
-    </div>
         <div class="row">
-      <div class="col-md-12">
-        <h2 class="text-center">Filtered Data Summary</h2>
-        <ul class="summary" id="maxmag"></ul>
-      </div>
-    </div>
-    <div class="row">
-        <div class="col-md-12">
-          <div id="bar"></div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-12">
-          <div id="histogram"></div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-12">
-          <div id="heatmap"></div>
-        </div>
-    </div>
-    <div class="row">
+              <div id="heatmap" class="col-md-12">
+              </div>
+         </div>
+<br>
+         <div class ="row">
+            <div class="col-md-12 card-deck">
+              <div class="bg-info card">
+                
+                <div class="card-body">
+                  <p  class="card-text text-center">Maximum Magnitude</p>
+                  <h2 id="maxmag" class="text-center card-title"></h2>
+                </div>
+              </div>
+              <div class="bg-info card">
+                
+                <div class="card-body">
+                  <p  class="card-text text-center">Average Depth</p>
+                  <h2 id="depth" class="text-center card-title"></h2>
+                  
+                  
+                </div>
+              </div>
+              <div class=" bg-info card">
+                <div class="card-body">
+                  <p class="text-center card-text">Earthquake Count</p>
+                  <h2 id="earthcount" class="text-center card-title"></h2>
+                </div>
+              </div>
+            </div>
+          </div>
+            <div class="row">
+              <div id="bar" class="col-md-6"></div>
+              <div id="histogram" class="col-md-6"></div>    
+            </div>
+   
+        <div class="row">
         <div class="col-md-12">
           <div id="stackedbar"></div>
         </div>
     </div>
-    <!-- <footer class="footer">
-      <span class="bottom">UFO Sightings</span>
-    </footer> -->
+    
   </div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.5.0/d3.min.js"></script>
   <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/5.0.0/math.min.js"></script>
   <script src="logic.js"></script>
+  <script src="animation.js"></script>
+  <script src="scrambling-letters-master/js/scramble.js"></script>
+
 </body>
 
 </html>
