@@ -180,25 +180,38 @@ function init() {
         var earthquakeCount = yearList.length;
 
         // Then, select the unordered list element by class name
-        var list = d3.select("#maxmag");
-
+        var list1 = d3.select("#maxmag");
+        var list2 = d3.select("#depth");
+        var list3 = d3.select("#earthcount");
         // remove any children from the list to
-        list.html("");
-
+        
+        list1.html("");
+        list2.html("");
+        list3.html("");
         // append stats to the list
-        list.append("li").text(`Maximum Magnitude: ${magnitudeMax}`);
-        list.append("li").text(`Average Depth: ${depthAverage}`);
-        list.append("li").text(`Earthquake Count: ${earthquakeCount}`);
+        list1.text(`${magnitudeMax}`);
+        list2.text(`${depthAverage}`);
+        list3.text(`${earthquakeCount}`);
 
         var barTrace = {
             x: yearList,
             y: dummyArray,
-            type: 'bar'
+            type: 'scatter',
+            mode: 'markers',
+            marker: {color:'red'},
+            transforms: [{
+                type:'aggregate',
+                groups: yearList,
+                aggregations: [
+                    {target: 'y', func: 'sum', enabled: true},
+                ]
+            }]
         }
 
-        var historgramTrace = {
+        var histogramTrace = {
             x: magnitudeNumber,
             type: 'histogram',
+            marker: {color:'rgb(142,124,195)'}
         };
 
         var heatmapTrace = {
@@ -255,7 +268,7 @@ function init() {
         }
 
         var barData = [barTrace];
-        var histogramData = [historgramTrace];
+        var histogramData = [histogramTrace];
         var heatMapdata = [heatmapTrace];
         var magnitudeData = [magnitudeMinorTrace, magnitudeLightTrace,magnitudeModerateTrace,magnitudeStrongTrace,magnitudeMajorTrace,magnitudeGreatTrace];
 
@@ -489,16 +502,31 @@ function filterselect() {
         var depthAverage = math.mean.apply(null, depthNumber.filter(function(n) { return !isNaN(n); })).toFixed(2);
         var earthquakeCount = yearList.length;
 
-        // Then, select the unordered list element by class name
-        var list = d3.select("#maxmag");
+        // // Then, select the unordered list element by class name
+        // var list = d3.select("#maxmag");
 
-        // remove any children from the list to
-        list.html("");
+        // // remove any children from the list to
+        // list.html("");
 
-        // append stats to the list
-        list.append("li").text(`Maximum Magnitude: ${magnitudeMax}`);
-        list.append("li").text(`Average Depth: ${depthAverage}`);
-        list.append("li").text(`Earthquake Count: ${earthquakeCount}`);
+        // // append stats to the list
+        // list.append("li").text(`Maximum Magnitude: ${magnitudeMax}`);
+        // list.append("li").text(`Average Depth: ${depthAverage}`);
+        // list.append("li").text(`Earthquake Count: ${earthquakeCount}`);
+
+// Then, select the unordered list element by class name
+var list1 = d3.select("#maxmag");
+var list2 = d3.select("#depth");
+var list3 = d3.select("#earthcount");
+// remove any children from the list to
+
+list1.html("");
+list2.html("");
+list3.html("");
+// append stats to the list
+list1.text(`${magnitudeMax}`);
+list2.text(`${depthAverage}`);
+list3.text(`${earthquakeCount}`);
+
 
         var magnitudeMinorTrace = {
             x: yearArray,
@@ -550,7 +578,7 @@ function filterselect() {
         Plotly.restyle("bar", "x", [yearList]);
         Plotly.restyle("bar", "y", [dummyArray]);
 
-        Plotly.restyle("histogram", "y", [magnitudeNumber]);
+        Plotly.restyle("histogram", "x", [magnitudeNumber]);
 
         Plotly.restyle("heatmap", "lon", [longitudeValues]);
         Plotly.restyle("heatmap", "lat", [latitudeValues]);
