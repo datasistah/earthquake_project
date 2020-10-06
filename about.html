@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html>
-
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/45b77e9515.js" crossorigin="anonymous"></script>
+    <!------ Include the above in your HEAD tag ---------->
 <head>
     <meta charset="utf-8">
     <title>Project 2: Earthquakes</title>
@@ -57,9 +61,69 @@
             <h4>Team Members</h4>
             <br>
 
+            <style>
+                .card {
+                  position: relative;
+                  width: 50%;
+                }
+                
+                .image {
+                  opacity: 1;
+                  display: block;
+                  width: 100%;
+                  height: auto;
+                  transition: .5s ease;
+                  backface-visibility: hidden;
+                }
+                
+                .middle {
+                  transition: .5s ease;
+                  opacity: 0;
+                  position: absolute;
+                  top: 50%;
+                  left: 50%;
+                  transform: translate(-50%, -50%);
+                  -ms-transform: translate(-50%, -50%);
+                  text-align: center;
+                }
+                
+                .card:hover .image {
+                  opacity: 0.3;
+                }
+                
+                .card:hover .middle {
+                  opacity: 1;
+                }
+                
+                .text {
+                  background-color: #4CAF50;
+                  color: white;
+                  font-size: 16px;
+                  padding: 16px 32px;
+                }
+                </style>
+                </head>
+                <body>
+                
+        
+                
+                <!-- <div class="card">
+                  <img src="StefaneeRichardson.jpg" alt="Stefanee Richardson" class="image" style="width:100%">
+                  <div class="middle">
+                    <div class="text">
+                        <h5 class="card-title"><a href="https://www.linkedin.com/in/stefanee-richardson-69629061/"
+                            target="_blank">Stefanee Richardson</a>
+                    </div>
+                  </div>
+                </div> -->
+
+
+                
+
+            
             <div class="card-columns col d-flex justify-content-center">
                 <div class="card">
-                    <img class="card-img-top" src="MelodieVines.jpg" alt="Melodie Vines">
+                    <img class="card-img-top" src="Images/MelodieVines_Fotor.jpg" alt="Melodie Vines">
                     <div class="card-body">
                         <h5 class="card-title"><a href="https://www.linkedin.com/in/melodiestaton/"
                                 target="_blank">Melodie Vines</a>
@@ -67,15 +131,18 @@
                     </div>
                 </div>
                 <div class="card">
-                    <img class="card-img-top" src="TiffanyTeasley.jpg" alt="Tiffany Teasley">
+                    <img class="card-img-top" src="Images/TiffanyTeasley_Fotor.jpg" alt="Tiffany Teasley">
                     <div class="card-body">
                         <h5 class="card-title"><a href="https://www.linkedin.com/in/tiffany-teasley/"
                                 target="_blank">Tiffany
                                 Teasley</a></h5>
                     </div>
                 </div>
+
+
+
                 <div class="card">
-                    <img class="card-img-top" src="StefaneeRichardson.jpg" alt="Stefanee Richardson">
+                    <img class="card-img-top" src="Images/StefaneeRichardson_Fotor.jpg" alt="Stefanee Richardson">
                     <div class="card-body">
                         <h5 class="card-title"><a href="https://www.linkedin.com/in/stefanee-richardson-69629061/"
                                 target="_blank">Stefanee Richardson</a>
@@ -83,7 +150,7 @@
                     </div>
                 </div>
                 <div class="card">
-                    <img class="card-img-top" src="MabelDuran-Sanchez.jpg" alt="Mabel Duran-Sanchez">
+                    <img class="card-img-top" src="Images/MabelDuran-Sanchez_Fotor.jpg" alt="Mabel Duran-Sanchez">
                     <div class="card-body">
                         <h5 class="card-title"><a href="https://www.linkedin.com/in/mabelduransanchez/"
                                 target="_blank">Mabel
@@ -94,6 +161,15 @@
 
 
             <br>
+            <p>***Interested in data consultation services? Contact us on LinkedIn!***</p>
+        <br>
+
+        <div div {
+            padding-top: 50px;
+            padding-right: 30px;
+            padding-bottom: 50px;
+            padding-left: 80px;
+          }
             <p>Motivated by the <a href="https://www.usgs.gov/news/magnitude-51-earthquake-near-sparta-north-carolina"
                     target="_blank">recent magnitude
                     5.1 earthquake</a> which struck North Carolina on August 9th, 2020, we decided to take a look back
@@ -109,6 +185,58 @@
                     target="_blank">here</a>.</p>
             <br>
         </div>
+   
+
+
+            <!------ Steps ---------->
+
+        <div class="container">
+            <h4>Steps</h4>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="main-timeline">
+                        <a href="#" class="timeline">
+                            <div class="timeline-icon"><i class="fas fa-broom"></i></div>
+                            <div class="timeline-content">
+                                <h3 class="title">Step 1: Data Preparation & Cleanup</h3>
+                                <p class="description">
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate ducimus officiis quod! Aperiam eveniet nam nostrum odit quasi ullam voluptatum.
+                                </p>
+                            </div>
+                        </a>
+                        <a href="#" class="timeline">
+                            <div class="timeline-icon"><i class="fas fa-server"></i></div>
+                            <div class="timeline-content">
+                                <h3 class="title">Step 2: Database & Server Setup</h3>
+                                <p class="description">
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate ducimus officiis quod! Aperiam eveniet nam nostrum odit quasi ullam voluptatum.
+                                </p>
+                            </div>
+                        </a>
+                        <a href="#" class="timeline">
+                            <div class="timeline-icon"><i class="fas fa-file-code"></i></div>
+                            <div class="timeline-content">
+                                <h3 class="title">Step 3: HTML & CSS</h3>
+                                <p class="description">
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate ducimus officiis quod! Aperiam eveniet nam nostrum odit quasi ullam voluptatum.
+                                </p>
+                            </div>
+                        </a>
+                        <a href="#" class="timeline">
+                            <div class="timeline-icon"><i class="fas fa-hand-sparkles"></i></div>
+                            <div class="timeline-content">
+                                <h3 class="title">Step 4: FINAL TOUCHES</h3>
+                                <p class="description">
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate ducimus officiis quod! Aperiam eveniet nam nostrum odit quasi ullam voluptatum.
+                                </p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr>
+        
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.5.0/d3.min.js"></script>
         <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
