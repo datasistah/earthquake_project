@@ -289,7 +289,12 @@ function init() {
             coloraxis: {colorscale: "Viridis"}, title: {text: "Earthquake Magnitude"},
             margin: {t: 30, b: 0}};
 
-        var magnitudeLayout = {barmode: 'stack'};
+        var magnitudeLayout = {
+            title: "Earthquake Count by Year and Magnitude",
+            xaxis: { title: "Year" },
+            yaxis: { title: "Number of Earthquakes" },
+            barmode: 'stack'
+        };
 
         var config = {mapboxAccessToken: "pk.eyJ1Ijoic3RlZmFuZWU4OCIsImEiOiJja2Y3ZTZsNTMwMWt0MnFvNHduZGRpaDk2In0.qbfCdcHGNqgJ5QNccagpug"};
 

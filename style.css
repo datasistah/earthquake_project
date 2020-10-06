@@ -1,0 +1,11 @@
+p {
+    text-align: left;
+}
+
+.navbar-brand {
+        color: white !important;
+    }
+
+    .nav-link {
+        color: white !important;
+    }
