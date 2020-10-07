@@ -9,3 +9,11 @@ p {
     .nav-link {
         color: white !important;
     }
+
+#filter-btn {
+    margin: 4px 2px;
+}
+
+#filter-btn-clear {
+    margin: 4px 2px;
+}

@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="anime.css">
-  <link rel="stylesheet" href="tiff.css">
+  <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
@@ -49,7 +49,7 @@
 
   <!-- Page Title -->
   <div class="wrapper">
-   
+  
     <div class="hero text-center">
       
       <!-- <h2>Earthquakes </h2> -->
@@ -68,7 +68,7 @@
         <div></div>
       </h1>
         <br>
-       <h3>1600 - 2020</h3>
+      <h3>1600 - 2020</h3>
       <hr>
     </div>
 
@@ -136,23 +136,23 @@
             </select>
           </button>
         </div>
-        <button id="filter-btn" type="button" class="btn btn-default">Filter Data</button>
-        <button id="filter-btn-clear" type="reset" class="btn btn-default">Clear Filters</button>
+        <button id="filter-btn" type="button" class="btn-default">Filter Data</button>
+        
+        <button id="filter-btn-clear" type="reset" class="btn-default">Clear Filters</button>
         </form>
       </div>
     </div>
   </div>
-
   <!-- Heatmap Section -->
   <div class="row">
-    <div id="heatmap" class="col-md-12">
+    <div id="heatmap" class="col-md-10 mx-auto">
     </div>
   </div>
   <br>
 
   <!-- Filtered Data Summary Section (Cards) -->
   <div class="row">
-    <div class="col-md-12 card-deck">
+    <div class="col-md-10 card-deck mx-auto">
       <div class="bg-info card">
 
         <div class="card-body">
@@ -163,7 +163,7 @@
       <div class="bg-info card">
 
         <div class="card-body">
-          <h4 class="card-text text-center"><strong>Average Depth</strong></h4>
+          <h4 class="card-text text-center"><strong>Average Depth (km)</strong></h4>
           <h2 id="depth" class="text-center card-title"></h2>
 
 
@@ -180,16 +180,15 @@
 
   <!-- Scatter and Histogram -->
   <div class="row">
-    <div id="bar" class="col-md-6"></div>
-    <div id="histogram" class="col-md-6"></div>
+    <div id="bar" class="col-md-5 mx-auto"></div>
+    <div id="histogram" class="col-md-5 mx-auto"></div>
   </div>
 
   <div class="row">
-    <div class="col-md-12">
+    <div class="col-md-11 mx-auto">
       <div id="stackedbar"></div>
     </div>
   </div>
-
   </div>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.5.0/d3.min.js"></script>
