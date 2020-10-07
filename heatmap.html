@@ -8,8 +8,8 @@
 
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <link rel="stylesheet" href="anime.css">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="static/css/anime.css">
+  <link rel="stylesheet" href="static/css/style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
@@ -31,10 +31,10 @@
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
               aria-haspopup="true" aria-expanded="false">
               Graphs</a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="heatmap.html">Magnitudes</a>
-              <a class="dropdown-item" href="scatter.html">Count by Year</a>
-              <a class="dropdown-item" href="histogram.html">Magnitude Count</a>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="heatmap.html">Magnitude Heatmap</a>
+              <a class="dropdown-item" href="scatter.html">Earthquake Count by Year</a>
+              <a class="dropdown-item" href="histogram.html">Magnitude Frequency</a>
               <a class="dropdown-item" href="stacked.html">Magnitudes by Year & Class</a>
             </div>
           </li>
@@ -51,7 +51,7 @@
 
     <div class="hero text-center">
       <br>
-      <h2>Earthquake Magnitude</h2>
+      <h2>Earthquake Magnitude Heatmap</h2>
       <br>
       <hr>
     </div>
@@ -134,6 +134,13 @@
   </div>
   <br>
 
+  <div class="row">
+    <div id="bar" class="col-md-5 mx-auto"></div>
+    <div id="histogram" class="col-md-5 mx-auto"></div>
+  </div>
+
+
+
   <!-- Heatmap Text Section -->
   <div class="container">
     <p>Our heatmap titled <i>Earthquake Magnitude</i> helps visualize earthquake magnitudes around the world.</p>
@@ -148,9 +155,9 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.5.0/d3.min.js"></script>
   <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/5.0.0/math.min.js"></script>
-  <script src="logic.js"></script>
+  <script src="static/js/heatmap.js"></script>
   <script src="anime-master/lib/anime.min.js"></script>
-  <script src="animation.js"></script>
+  <script src="static/js/animation.js"></script>
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
     integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
     crossorigin="anonymous"></script>
