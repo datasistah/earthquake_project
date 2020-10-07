@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html>
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://kit.fontawesome.com/45b77e9515.js" crossorigin="anonymous"></script>
-    <!------ Include the above in your HEAD tag ---------->
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://kit.fontawesome.com/45b77e9515.js" crossorigin="anonymous"></script>
+<!------ Include the above in your HEAD tag ---------->
+
 <head>
     <meta charset="utf-8">
     <title>Project 2: Earthquakes</title>
@@ -37,10 +38,10 @@
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Graphs</a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="count_by_year.html">Earthquake Count by Year</a>
-                            <a class="dropdown-item" href="magnitude_count.html">Earthquake Magnitude Count</a>
-                            <a class="dropdown-item" href="magnitudes.html">Earthquake Magnitudes (Richter Scale)</a>
-                            <a class="dropdown-item" href="magnitudes_and_year.html">Earthquake Magnitudes by Year and
+                            <a class="dropdown-item" href="heatmap.html">Earthquake Count by Year</a>
+                            <a class="dropdown-item" href="scatter.html">Earthquake Magnitude Count</a>
+                            <a class="dropdown-item" href="histogram.html">Earthquake Magnitudes (Richter Scale)</a>
+                            <a class="dropdown-item" href="stacked.html">Earthquake Magnitudes by Year and
                                 Magnitude Class
                                 (Richter Scale)</a>
                         </div>
@@ -55,7 +56,7 @@
 
         <div class="hero text-center">
             <br>
-            <h2 data-scrambler>About Our Project</h2>
+            <h2>About Our Project</h2>
             <br>
             <hr>
             <h4>Team Members</h4>
@@ -63,50 +64,51 @@
 
             <style>
                 .card {
-                  position: relative;
-                  width: 50%;
+                    position: relative;
+                    width: 50%;
                 }
-                
+
                 .image {
-                  opacity: 1;
-                  display: block;
-                  width: 100%;
-                  height: auto;
-                  transition: .5s ease;
-                  backface-visibility: hidden;
+                    opacity: 1;
+                    display: block;
+                    width: 100%;
+                    height: auto;
+                    transition: .5s ease;
+                    backface-visibility: hidden;
                 }
-                
+
                 .middle {
-                  transition: .5s ease;
-                  opacity: 0;
-                  position: absolute;
-                  top: 50%;
-                  left: 50%;
-                  transform: translate(-50%, -50%);
-                  -ms-transform: translate(-50%, -50%);
-                  text-align: center;
+                    transition: .5s ease;
+                    opacity: 0;
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    -ms-transform: translate(-50%, -50%);
+                    text-align: center;
                 }
-                
+
                 .card:hover .image {
-                  opacity: 0.3;
+                    opacity: 0.3;
                 }
-                
+
                 .card:hover .middle {
-                  opacity: 1;
+                    opacity: 1;
                 }
-                
+
                 .text {
-                  background-color: #4CAF50;
-                  color: white;
-                  font-size: 16px;
-                  padding: 16px 32px;
+                    background-color: #4CAF50;
+                    color: white;
+                    font-size: 16px;
+                    padding: 16px 32px;
                 }
-                </style>
-                </head>
-                <body>
-                
-        
-                
+            </style>
+            </head>
+
+            <body>
+
+
+
                 <!-- <div class="card">
                   <img src="StefaneeRichardson.jpg" alt="Stefanee Richardson" class="image" style="width:100%">
                   <div class="middle">
@@ -118,133 +120,152 @@
                 </div> -->
 
 
+
+
+
+                <div class="card-columns col d-flex justify-content-center">
+                    <div class="card">
+                        <img class="card-img-top" src="Images/MelodieVines_Fotor.jpg" alt="Melodie Vines">
+                        <div class="card-body">
+                            <h5 class="card-title"><a href="https://www.linkedin.com/in/melodiestaton/"
+                                    target="_blank">Melodie Vines</a>
+                            </h5>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img class="card-img-top" src="Images/TiffanyTeasley_Fotor.jpg" alt="Tiffany Teasley">
+                        <div class="card-body">
+                            <h5 class="card-title"><a href="https://www.linkedin.com/in/tiffany-teasley/"
+                                    target="_blank">Tiffany
+                                    Teasley</a></h5>
+                        </div>
+                    </div>
+
+
+
+                    <div class="card">
+                        <img class="card-img-top" src="Images/StefaneeRichardson_Fotor.jpg" alt="Stefanee Richardson">
+                        <div class="card-body">
+                            <h5 class="card-title"><a href="https://www.linkedin.com/in/stefanee-richardson-69629061/"
+                                    target="_blank">Stefanee Richardson</a>
+                            </h5>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img class="card-img-top" src="Images/MabelDuran-Sanchez_Fotor.jpg" alt="Mabel Duran-Sanchez">
+                        <div class="card-body">
+                            <h5 class="card-title"><a href="https://www.linkedin.com/in/mabelduransanchez/"
+                                    target="_blank">Mabel
+                                    Duran-Sanchez</a></h5>
+                        </div>
+                    </div>
+                </div>
+
+
+                <br>
+
+                <div class="container">
+                    <p>***Interested in data consultation services? Contact us on LinkedIn!***</p>
+                    <br>
+
+                    <p>
+                        Motivated by the <a
+                            href="https://www.usgs.gov/news/magnitude-51-earthquake-near-sparta-north-carolina"
+                            target="_blank">recent magnitude
+                            5.1 earthquake</a> which struck North Carolina on August 9th, 2020, we decided to take a
+                        look back
+                        in history and explore the frequency, magnitudes, and locations of these natural events.</p>
+                        <br>
+                        <p>After reviewing several datasets, we came across a dataset collecting data on significant
+                            earthquakes
+                            around the world since 1600 from the <a href="https://www.noaa.gov/" target="_blank">U.S.
+                                Department of
+                                Commerce,
+                                National Oceanic and Atmospheric Administration</a> available through <a
+                                href="https://www.kaggle.com/" target="_blank">Kaggle</a>. To view the dataset we
+                            utilized for this
+                            project, click
+                            <a href="https://www.kaggle.com/shekpaul/major-earthquakes-noaa?select=Information.txt"
+                                target="_blank">here</a>.</p>
+                        <br>
                 
+                    <!------ Steps ---------->
 
-            
-            <div class="card-columns col d-flex justify-content-center">
-                <div class="card">
-                    <img class="card-img-top" src="Images/MelodieVines_Fotor.jpg" alt="Melodie Vines">
-                    <div class="card-body">
-                        <h5 class="card-title"><a href="https://www.linkedin.com/in/melodiestaton/"
-                                target="_blank">Melodie Vines</a>
-                        </h5>
-                    </div>
-                </div>
-                <div class="card">
-                    <img class="card-img-top" src="Images/TiffanyTeasley_Fotor.jpg" alt="Tiffany Teasley">
-                    <div class="card-body">
-                        <h5 class="card-title"><a href="https://www.linkedin.com/in/tiffany-teasley/"
-                                target="_blank">Tiffany
-                                Teasley</a></h5>
-                    </div>
-                </div>
-
-
-
-                <div class="card">
-                    <img class="card-img-top" src="Images/StefaneeRichardson_Fotor.jpg" alt="Stefanee Richardson">
-                    <div class="card-body">
-                        <h5 class="card-title"><a href="https://www.linkedin.com/in/stefanee-richardson-69629061/"
-                                target="_blank">Stefanee Richardson</a>
-                        </h5>
-                    </div>
-                </div>
-                <div class="card">
-                    <img class="card-img-top" src="Images/MabelDuran-Sanchez_Fotor.jpg" alt="Mabel Duran-Sanchez">
-                    <div class="card-body">
-                        <h5 class="card-title"><a href="https://www.linkedin.com/in/mabelduransanchez/"
-                                target="_blank">Mabel
-                                Duran-Sanchez</a></h5>
-                    </div>
-                </div>
-            </div>
-
-
-            <br>
-            <p>***Interested in data consultation services? Contact us on LinkedIn!***</p>
-        <br>
-
-        <div div {
-            padding-top: 50px;
-            padding-right: 30px;
-            padding-bottom: 50px;
-            padding-left: 80px;
-          }
-            <p>Motivated by the <a href="https://www.usgs.gov/news/magnitude-51-earthquake-near-sparta-north-carolina"
-                    target="_blank">recent magnitude
-                    5.1 earthquake</a> which struck North Carolina on August 9th, 2020, we decided to take a look back
-                in history and explore the frequency, magnitudes, and locations of these natural events.</p>
-            <br>
-            <p>After reviewing several datasets, we came across a dataset collecting data on significant earthquakes
-                around the world since 1600 from the <a href="https://www.noaa.gov/" target="_blank">U.S. Department of
-                    Commerce,
-                    National Oceanic and Atmospheric Administration</a> available through <a
-                    href="https://www.kaggle.com/" target="_blank">Kaggle</a>. To view the dataset we utilized for this
-                project, click
-                <a href="https://www.kaggle.com/shekpaul/major-earthquakes-noaa?select=Information.txt"
-                    target="_blank">here</a>.</p>
-            <br>
-        </div>
-   
-
-
-            <!------ Steps ---------->
-
-        <div class="container">
-            <h4>Steps</h4>
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="main-timeline">
-                        <a href="#" class="timeline">
-                            <div class="timeline-icon"><i class="fas fa-broom"></i></div>
-                            <div class="timeline-content">
-                                <h3 class="title">Step 1: Data Preparation & Cleanup</h3>
-                                <p class="description">
-                                    We kept the dataset almost intact given that significant amounts of information were missing, particularly prior to the 1900s. We modified the “Name” column which provides earthquake location information using Python and decided to only keep the location name prior to the “:” which most often is the country in this dataset, although in some instances it refers to the state.
-                                </p>
+                    <div class="container">
+                        <h4>Steps</h4>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="main-timeline">
+                                    <a href="#" class="timeline">
+                                        <div class="timeline-icon"><i class="fas fa-broom"></i></div>
+                                        <div class="timeline-content">
+                                            <h3 class="title">Step 1: Data Preparation & Cleanup</h3>
+                                            <p class="description">
+                                                We kept the dataset almost intact given that significant amounts of
+                                                information were missing, particularly prior to the 1900s. We modified
+                                                the “Name” column which provides earthquake location information using
+                                                Python and decided to only keep the location name prior to the “:” which
+                                                most often is the country in this dataset, although in some instances it
+                                                refers to the state.
+                                            </p>
+                                        </div>
+                                    </a>
+                                    <a href="#" class="timeline">
+                                        <div class="timeline-icon"><i class="fas fa-server"></i></div>
+                                        <div class="timeline-content">
+                                            <h3 class="title">Step 2: Database & Server Setup</h3>
+                                            <p class="description">
+                                                Python Flask powered RESTful API, HTML/CSS, Javascript, and MongoDB were
+                                                utilized for the visualization. In our first python file
+                                                (datacleanup.py), preparation of data occurred including: cleansing of
+                                                the data, renaming a column and exporting the CSV file into a JSON file
+                                                to be utilized by MongoDB. Within the second Python file (app.py), one
+                                                route pulls all of the data from MongoDB to send to Javascript upon the
+                                                call to the route and the second route applies filters to the data based
+                                                on user selections. When a user selects one or more filters on the HTML
+                                                page, Javascript pulls those values and sends them in a request to
+                                                Python. In Python, using MongoDB the filters are applied and the
+                                                filtered data is then returned to Javascript. Regardless if the user
+                                                selects one or multiple filters, the logic can pull the data and send
+                                                the filtered data set to Javascript.
+                                            </p>
+                                        </div>
+                                    </a>
+                                    <a href="#" class="timeline">
+                                        <div class="timeline-icon"><i class="fas fa-file-code"></i></div>
+                                        <div class="timeline-content">
+                                            <h3 class="title">Step 3: HTML & CSS</h3>
+                                            <p class="description">
+                                                While the logic.js file helps us pull the information filtered by the
+                                                user, our HTML file renders it on the web. The CSS file, in addition to
+                                                Bootstrap, helps with the styling of the website and dashboard.
+                                            </p>
+                                        </div>
+                                    </a>
+                                    <a href="#" class="timeline">
+                                        <div class="timeline-icon"><i class="fas fa-hand-sparkles"></i></div>
+                                        <div class="timeline-content">
+                                            <h3 class="title">Step 4: FINAL TOUCHES</h3>
+                                            <p class="description">
+                                                Our final touches included making our webpage more visualy pleasing.
+                                            </p>
+                                        </div>
+                                    </a>
+                                </div>
                             </div>
-                        </a>
-                        <a href="#" class="timeline">
-                            <div class="timeline-icon"><i class="fas fa-server"></i></div>
-                            <div class="timeline-content">
-                                <h3 class="title">Step 2: Database & Server Setup</h3>
-                                <p class="description">
-                                    Python Flask powered RESTful API, HTML/CSS, Javascript, and MongoDB were utilized for the visualization. In our first python file (datacleanup.py), preparation of data occurred including: cleansing of the data, renaming a column and exporting the CSV file into a JSON file to be utilized by MongoDB. Within the second Python file (app.py), one route pulls all of the data from MongoDB to send to Javascript upon the call to the route and the second route applies filters to the data based on user selections. When a user selects one or more filters on the HTML page, Javascript pulls those values and sends them in a request to Python. In Python, using MongoDB the filters are applied and the filtered data is then returned to Javascript. Regardless if the user selects one or multiple filters, the logic can pull the data and send the filtered data set to Javascript.
-                                </p>
-                            </div>
-                        </a>
-                        <a href="#" class="timeline">
-                            <div class="timeline-icon"><i class="fas fa-file-code"></i></div>
-                            <div class="timeline-content">
-                                <h3 class="title">Step 3: HTML & CSS</h3>
-                                <p class="description">
-                                    While the logic.js file helps us pull the information filtered by the user, our HTML file renders it on the web. The CSS file, in addition to Bootstrap, helps with the styling of the website and dashboard.
-                                </p>
-                            </div>
-                        </a>
-                        <a href="#" class="timeline">
-                            <div class="timeline-icon"><i class="fas fa-hand-sparkles"></i></div>
-                            <div class="timeline-content">
-                                <h3 class="title">Step 4: FINAL TOUCHES</h3>
-                                <p class="description">
-                                    Our final touches included making our webpage more visualy pleasing.  
-                                </p>
-                            </div>
-                        </a>
+                        </div>
                     </div>
+                    <hr>
                 </div>
-            </div>
-        </div>
-        <hr>
-        
 
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.5.0/d3.min.js"></script>
-        <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/5.0.0/math.min.js"></script>
-        <script src="logic.js"></script>
-        <script src="animation.js"></script>
-        <script src="scrambling-letters-master/js/scramble.js"></script>
 
-</body>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.5.0/d3.min.js"></script>
+                <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/5.0.0/math.min.js"></script>
+                <script src="logic.js"></script>
+                <script src="animation.js"></script>
+                <script src="scrambling-letters-master/js/scramble.js"></script>
+
+            </body>
 
 </html>
