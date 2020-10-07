@@ -200,7 +200,7 @@
                             <div class="timeline-content">
                                 <h3 class="title">Step 1: Data Preparation & Cleanup</h3>
                                 <p class="description">
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate ducimus officiis quod! Aperiam eveniet nam nostrum odit quasi ullam voluptatum.
+                                    We kept the dataset almost intact given that significant amounts of information were missing, particularly prior to the 1900s. We modified the “Name” column which provides earthquake location information using Python and decided to only keep the location name prior to the “:” which most often is the country in this dataset, although in some instances it refers to the state.
                                 </p>
                             </div>
                         </a>
@@ -209,7 +209,7 @@
                             <div class="timeline-content">
                                 <h3 class="title">Step 2: Database & Server Setup</h3>
                                 <p class="description">
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate ducimus officiis quod! Aperiam eveniet nam nostrum odit quasi ullam voluptatum.
+                                    Python Flask powered RESTful API, HTML/CSS, Javascript, and MongoDB were utilized for the visualization. In our first python file (datacleanup.py), preparation of data occurred including: cleansing of the data, renaming a column and exporting the CSV file into a JSON file to be utilized by MongoDB. Within the second Python file (app.py), one route pulls all of the data from MongoDB to send to Javascript upon the call to the route and the second route applies filters to the data based on user selections. When a user selects one or more filters on the HTML page, Javascript pulls those values and sends them in a request to Python. In Python, using MongoDB the filters are applied and the filtered data is then returned to Javascript. Regardless if the user selects one or multiple filters, the logic can pull the data and send the filtered data set to Javascript.
                                 </p>
                             </div>
                         </a>
@@ -218,7 +218,7 @@
                             <div class="timeline-content">
                                 <h3 class="title">Step 3: HTML & CSS</h3>
                                 <p class="description">
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate ducimus officiis quod! Aperiam eveniet nam nostrum odit quasi ullam voluptatum.
+                                    While the logic.js file helps us pull the information filtered by the user, our HTML file renders it on the web. The CSS file, in addition to Bootstrap, helps with the styling of the website and dashboard.
                                 </p>
                             </div>
                         </a>
@@ -227,7 +227,7 @@
                             <div class="timeline-content">
                                 <h3 class="title">Step 4: FINAL TOUCHES</h3>
                                 <p class="description">
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate ducimus officiis quod! Aperiam eveniet nam nostrum odit quasi ullam voluptatum.
+                                    Our final touches included making our webpage more visualy pleasing.  
                                 </p>
                             </div>
                         </a>

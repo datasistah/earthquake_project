@@ -316,7 +316,7 @@ var form = d3.select("#form");
 
 // Create event handlers 
 filterButton.on("click", filterselect);
-// clearButton.on("click", clearselect);
+clearButton.on("click", clearselect);
 form.on("submit", filterselect);
 
 function filterselect() {
@@ -352,7 +352,6 @@ function filterselect() {
 
         var yearNumber = [];
         var countryName = [];
-        var monthName = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
         var magnitudeNumber = [];
         var depthNumber = [];
         var yearList = [];
@@ -485,7 +484,25 @@ function filterselect() {
             opt.appendChild(document.createTextNode(year));
             opt.value = year;
             sel.appendChild(opt);
-        })
+        });
+
+        yearNumber.forEach(year => {
+            var sel = document.getElementById('yearmin');
+            var opt = document.createElement('option');
+            opt.appendChild(document.createTextNode(year));
+            opt.value = year;
+            sel.appendChild(opt);
+        });
+
+        yearNumber.forEach(year => {
+            var sel = document.getElementById('yearmax');
+            var opt = document.createElement('option');
+            opt.appendChild(document.createTextNode(year));
+            opt.value = year;
+            sel.appendChild(opt);
+        });
+
+        countryName.sort();
 
         countryName.forEach(country => {
             var sel = document.getElementById('country');
@@ -493,15 +510,7 @@ function filterselect() {
             opt.appendChild(document.createTextNode(country));
             opt.value = country;
             sel.appendChild(opt);
-        })
-
-        monthName.forEach(month => {
-            var sel = document.getElementById('month');
-            var opt = document.createElement('option');
-            opt.appendChild(document.createTextNode(month));
-            opt.value = month;
-            sel.appendChild(opt);
-        })
+        });
 
         var magnitudeMax = Math.max.apply(null, magnitudeNumber.filter(function(n) { return !isNaN(n); }));
         var depthAverage = math.mean.apply(null, depthNumber.filter(function(n) { return !isNaN(n); })).toFixed(2);
@@ -592,6 +601,18 @@ list3.text(`${earthquakeCount}`);
         Plotly.newPlot('stackedbar', magnitudeData, magnitudeLayout);
 
     });
+
+}
+
+function clearselect() {
+    document.getElementById("datetime").value = "Select All"
+    document.getElementById("yearmin").value = "Select All"
+    document.getElementById("yearmax").value = "Select All"
+    document.getElementById("country").value = "Select All"
+    document.getElementById("month").value = "Select All"
+    document.getElementById("datetime").value = "Select All"
+
+    init();
 
 }
 
