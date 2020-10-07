@@ -17,24 +17,24 @@
 <body>
   <!-- Create Home Navbar -->
   <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #50327c;">
-    <div class="container-fluid">
+    <!-- <div class="container-fluid"> -->
       <a class="navbar-brand" class="whitefont" href="index.html">Home</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
 
       <!-- Create dropdown Graphs Navbar -->
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
             <a class="nav-link" href="about.html">About</a>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown"
               aria-haspopup="true" aria-expanded="false">
               Graphs</a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
               <a class="dropdown-item" href="heatmap.html">Earthquake Count by Year</a>
               <a class="dropdown-item" href="scatter.html">Earthquake Magnitude Count</a>
               <a class="dropdown-item" href="histogram.html">Earthquake Magnitudes (Richter Scale)</a>
@@ -44,7 +44,7 @@
           </li>
         </ul>
       </div>
-    </div>
+    <!-- </div> -->
   </nav>
 
   <!-- Page Title -->
@@ -52,7 +52,7 @@
 
     <div class="hero text-center">
       <br>
-      <h2>About Our Scatter Plot</h2>
+      <h2>Earthquake Count by Year</h2>
       <br>
       <hr>
     </div>
@@ -139,8 +139,7 @@
   <div class="container">
     <p>Our scatter plot titled <i>Earthquake Count by Year</i> shows the number of earthquakes recorded per each year
       within our dataset.</p>
-    <p>The more we approach the 21st century, the more earthquake occurrences which are also observed.</p>
-    <p>This is most likely due to the vast advancements in technology which have allowed for more precise monitoring and
+    <p>The more we approach the 21st century, the more earthquake occurrences which are also observed. This is most likely due to the vast advancements in technology which have allowed for more precise monitoring and
       recording of earthquake events.</p>
   </div>
 
