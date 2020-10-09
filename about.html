@@ -54,10 +54,10 @@
 
         <div class="hero text-center">
             <br>
-            <h2>About Our Project</h2>
+            <h2>The Story Behind Our Project</h2>
             <br>
-            <hr>
-            <h4>Team Members</h4>
+       
+            <h4>Meet the Team</h4>
             <br>
 
             <style>
@@ -118,6 +118,7 @@
                 </div> -->
 
 
+                
 
 
 
@@ -160,13 +161,38 @@
                 </div>
 
 
-                <br>
+                <!-- <br> -->
 
-                <div class="container">
-                    <p>***Interested in data consultation services? Contact us on LinkedIn!***</p>
+                <center>***Interested in data consultation services? Contact us on LinkedIn!***</center>
                     <br>
+                <div class="container">
+                    
 
-                    <p>
+                    <div style="background-color:rgba(238, 99, 6, 0.658);color:white;padding:20px;">
+                        <h2>Project Theme</h2>
+                        <p> Motivated by the <a
+                            href="https://www.usgs.gov/news/magnitude-51-earthquake-near-sparta-north-carolina"
+                            target="_blank">recent magnitude
+                            5.1 earthquake</a> which struck North Carolina on August 9th, 2020, we decided to take a
+                        look back
+                        in history and explore the frequency, magnitudes, and locations of these natural events.</p>
+                        <pAfter reviewing several datasets, we came across a dataset collecting data on significant
+                        earthquakes
+                        around the world since 1600 from the <a href="https://www.noaa.gov/" target="_blank">U.S.
+                            Department of
+                            Commerce,
+                            National Oceanic and Atmospheric Administration</a> available through <a
+                            href="https://www.kaggle.com/" target="_blank">Kaggle</a>. To view the dataset we
+                        utilized for this
+                        project, click
+                        <a href="https://www.kaggle.com/shekpaul/major-earthquakes-noaa?select=Information.txt"
+                            target="_blank">here</a>.</p>
+                            <p> See below for the steps we took to build the <a
+                                href="http://127.0.0.1:5500/index.html" target="_blank">Earthquake Dashboard</a>. </p>
+                      </div> 
+                      
+
+                    <!-- <p>
                         Motivated by the <a
                             href="https://www.usgs.gov/news/magnitude-51-earthquake-near-sparta-north-carolina"
                             target="_blank">recent magnitude
@@ -184,13 +210,13 @@
                         utilized for this
                         project, click
                         <a href="https://www.kaggle.com/shekpaul/major-earthquakes-noaa?select=Information.txt"
-                            target="_blank">here</a>.</p>
+                            target="_blank">here</a>.</p> -->
                     <br>
 
                     <!------ Steps ---------->
 
                     <div class="container">
-                        <h4>Steps</h4>
+                        <h2>Steps</h2>
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="main-timeline">
@@ -199,8 +225,9 @@
                                         <div class="timeline-content">
                                             <h3 class="title">Step 1: Data Preparation & Cleanup</h3>
                                             <p class="description">
-                                                We kept the dataset almost intact given that significant amounts of
-                                                information were missing, particularly prior to the 1900s. We modified
+                                                The data set consisted of key elements to allow us to dig deeper in to global
+                                                earthquake trends dating back to 1600 though it was noted that the level of 
+                                                detail was limited priot to 1930. In an effort to better analyze the data, we modified 
                                                 the “Name” column which provides earthquake location information using
                                                 Python and decided to only keep the location name prior to the “:” which
                                                 most often is the country in this dataset, although in some instances it
@@ -245,7 +272,9 @@
                                         <div class="timeline-content">
                                             <h3 class="title">Step 4: FINAL TOUCHES</h3>
                                             <p class="description">
-                                                Our final touches included making our webpage more visualy pleasing.
+                                                We created 4 different types of visualizations (heatmap, scatter plot, 
+                                                histogram, and stacked bar chart) to better showcase earthquake occurrences 
+                                                and magnitudes from 1600 - 2020 around the world.
                                             </p>
                                         </div>
                                     </a>

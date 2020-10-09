@@ -78,3 +78,28 @@ h4{text-align:center;margin:30px 0;color:#444}
 @media only screen and (max-width:479px){.main-timeline .timeline-content,.main-timeline .timeline:nth-child(2n) .timeline-content{padding-left:110px}
 .main-timeline .timeline-content:before,.main-timeline .timeline:nth-child(2n) .timeline-content:before{left:99px}
 .main-timeline .timeline-content:after,.main-timeline .timeline:nth-child(2n) .timeline-content:after{left:65px}
+
+}
+.hero {
+    position: relative;
+    height: 300px;
+    padding: 0;
+    margin: auto;
+    /* background: black; */
+    background-image: url("EarthquakePic3.png");
+    background-attachment: fixed;
+    background-position: bottom center;
+    background-size: cover;
+  }
+  .hero h1 {
+    color: white;
+  }
+  .hero h2 {
+    color: white;
+  }
+  .hero h3 {
+    color: white;
+  }
+  .hero h4 {
+    color: white;
+  }
