@@ -18,7 +18,7 @@ app.config['CORS_ORIGINS'] = '*'
 
 # app.config["MONGO_URI"] = "mongodb://localhost:27017/earthquake_db"
 # Web Hosted MongoDB
-app.config["MONGO_URI"] = "mongodb+srv://admin:N!ck40o0@sampleapicluster.xkn27.mongodb.net/dogs?retryWrites=true&w=majority"
+app.config["MONGO_URI"] = "mongodb+srv://admin:project2@cluster0.tbfxy.mongodb.net/earthquake_db?retryWrites=true&w=majority"
 mongo = PyMongo(app)
 
 earthquake = mongo.db.earthquake
