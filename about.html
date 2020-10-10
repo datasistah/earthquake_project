@@ -18,36 +18,36 @@
 </head>
 
 <body>
-  <!-- Create Home Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #50327c;">
-    <div class="container-fluid">
-      <a class="navbar-brand" class="whitefont" href="index.html">Home</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+    <!-- Create Home Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #50327c;">
+        <div class="container-fluid">
+            <a class="navbar-brand" class="whitefont" href="index.html">Home</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-      <!-- Create dropdown Graphs Navbar -->
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-              aria-haspopup="true" aria-expanded="false">
-              Graphs</a>
-            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="heatmap.html">Magnitude Heatmap</a>
-              <a class="dropdown-item" href="scatter.html">Earthquake Count by Year</a>
-              <a class="dropdown-item" href="histogram.html">Magnitude Frequency</a>
-              <a class="dropdown-item" href="stacked.html">Magnitudes by Year & Class</a>
+            <!-- Create dropdown Graphs Navbar -->
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Graphs</a>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="heatmap.html">Magnitude Heatmap</a>
+                            <a class="dropdown-item" href="scatter.html">Earthquake Count by Year</a>
+                            <a class="dropdown-item" href="histogram.html">Magnitude Frequency</a>
+                            <a class="dropdown-item" href="stacked.html">Magnitudes by Year & Class</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                </ul>
             </div>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="about.html">About</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+        </div>
+    </nav>
 
     <!-- Page Title -->
     <div class="wrapper">
@@ -56,7 +56,7 @@
             <br>
             <h2>The Story Behind Our Project</h2>
             <br>
-       
+
             <h4>Meet the Team</h4>
             <br>
 
@@ -118,7 +118,7 @@
                 </div> -->
 
 
-                
+
 
 
 
@@ -164,33 +164,98 @@
                 <!-- <br> -->
 
                 <center>***Interested in data consultation services? Contact us on LinkedIn!***</center>
-                    <br>
+                <br>
                 <div class="container">
-                    
+
 
                     <div style="background-color:rgba(238, 99, 6, 0.658);color:white;padding:20px;">
                         <h2>Project Theme</h2>
                         <p> Motivated by the <a
-                            href="https://www.usgs.gov/news/magnitude-51-earthquake-near-sparta-north-carolina"
-                            target="_blank">recent magnitude
-                            5.1 earthquake</a> which struck North Carolina on August 9th, 2020, we decided to take a
-                        look back
-                        in history and explore the frequency, magnitudes, and locations of these natural events.</p>
+                                href="https://www.usgs.gov/news/magnitude-51-earthquake-near-sparta-north-carolina"
+                                target="_blank">recent magnitude
+                                5.1 earthquake</a> which struck North Carolina on August 9th, 2020, we decided to take a
+                            look back
+                            in history and explore the frequency, magnitudes, and locations of these natural events.</p>
                         <pAfter reviewing several datasets, we came across a dataset collecting data on significant
-                        earthquakes
-                        around the world since 1600 from the <a href="https://www.noaa.gov/" target="_blank">U.S.
+                            earthquakes around the world since 1600 from the <a href="https://www.noaa.gov/"
+                            target="_blank">U.S.
                             Department of
                             Commerce,
                             National Oceanic and Atmospheric Administration</a> available through <a
-                            href="https://www.kaggle.com/" target="_blank">Kaggle</a>. To view the dataset we
-                        utilized for this
-                        project, click
-                        <a href="https://www.kaggle.com/shekpaul/major-earthquakes-noaa?select=Information.txt"
-                            target="_blank">here</a>.</p>
-                            <p> See below for the steps we took to build the <a
-                                href="http://127.0.0.1:5500/index.html" target="_blank">Earthquake Dashboard</a>. </p>
-                      </div> 
-                      
+                                href="https://www.kaggle.com/" target="_blank">Kaggle</a>. To view the dataset we
+                            utilized for this
+                            project, click
+                            <a href="https://www.kaggle.com/shekpaul/major-earthquakes-noaa?select=Information.txt"
+                                target="_blank">here</a>.</p>
+
+                            <!-- Magnitude Scale Table -->
+                            <style>
+                                table,
+                                th,
+                                td {
+                                    border: 1px solid black;
+                                    border-collapse: collapse;
+                                }
+
+                                th,
+                                td {
+                                    padding: 5px;
+                                    text-align: left;
+                                }
+                            </style>
+                            </head>
+
+                            <body>
+                                <h2>Earthquake Magnitude Scale</h2>
+                                <!-- <p>To add a caption to a table, use the caption tag.</p> -->
+                                <table style="width:100%">
+                                    <!-- <caption>Monthly savings</caption> -->
+                                    <tr>
+                                        <th>Magnitude</th>
+                                        <th>Earthquake Class</th>
+                                        <th>Earthquake Effects</th>
+                                    </tr>
+                                    <tr>
+                                        <td>8 or more</td>
+                                        <td>Great</td>
+                                        <td>Can totally destroy communities near the epicenter.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>7 to 7.9</td>
+                                        <td>Major</td>
+                                        <td>Serious damage.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>6 to 6.9</td>
+                                        <td>Strong</td>
+                                        <td>May cause a lot of damage in very populated areas.</td>
+                                    </tr>
+                                    </tr>
+                                    <tr>
+                                        <td>5 to 5.9</td>
+                                        <td>Moderate</td>
+                                        <td>Slight damage to buildings and other structures.</td>
+                                    </tr>
+                                    </tr>
+                                    <tr>
+                                        <td>4 to 4.9</td>
+                                        <td>Light</td>
+                                        <td>Often felt, but only causes minor damage.</td>
+                                    </tr>
+                                    </tr>
+                                    <tr>
+                                        <td>3 to 3.9</td>
+                                        <td>Minor</td>
+                                        <td>May feel like a passing truck</td>
+                                    </tr>
+                                </table>
+                                <br>
+
+                                <p> See below for the steps we took to build the <a
+                                        href="http://127.0.0.1:5500/index.html" target="_blank">Earthquake
+                                        Dashboard</a>. </p>
+                    </div>
+
 
                     <!-- <p>
                         Motivated by the <a
@@ -225,9 +290,12 @@
                                         <div class="timeline-content">
                                             <h3 class="title">Step 1: Data Preparation & Cleanup</h3>
                                             <p class="description">
-                                                The data set consisted of key elements to allow us to dig deeper in to global
-                                                earthquake trends dating back to 1600 though it was noted that the level of 
-                                                detail was limited priot to 1930. In an effort to better analyze the data, we modified 
+                                                The data set consisted of key elements to allow us to dig deeper in to
+                                                global
+                                                earthquake trends dating back to 1600 though it was noted that the level
+                                                of
+                                                detail was limited priot to 1930. In an effort to better analyze the
+                                                data, we modified
                                                 the “Name” column which provides earthquake location information using
                                                 Python and decided to only keep the location name prior to the “:” which
                                                 most often is the country in this dataset, although in some instances it
@@ -272,8 +340,9 @@
                                         <div class="timeline-content">
                                             <h3 class="title">Step 4: FINAL TOUCHES</h3>
                                             <p class="description">
-                                                We created 4 different types of visualizations (heatmap, scatter plot, 
-                                                histogram, and stacked bar chart) to better showcase earthquake occurrences 
+                                                We created 4 different types of visualizations (heatmap, scatter plot,
+                                                histogram, and stacked bar chart) to better showcase earthquake
+                                                occurrences
                                                 and magnitudes from 1600 - 2020 around the world.
                                             </p>
                                         </div>
