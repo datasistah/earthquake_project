@@ -610,7 +610,8 @@ function clearselect() {
     document.getElementById("yearmax").value = "Select All"
     document.getElementById("country").value = "Select All"
     document.getElementById("month").value = "Select All"
-    document.getElementById("datetime").value = "Select All"
+    document.getElementById("death").value = "Select All"
+    document.getElementById("magnitude").value = "Select All"
 
     init();
 
