@@ -1,6 +1,6 @@
 function init() {
     var data = [];
-    d3.request("http://127.0.0.1:5000/all").get(response => {
+    d3.request("/all").get(response => {
 
         data = JSON.parse(response.response);
 
@@ -345,7 +345,7 @@ function filterselect() {
     var inputValueYearMax = inputElementYearMax.property("value");  
 
     var data = [];
-    d3.request("http://127.0.0.1:5000/filter/" + inputValueDate + "/" + inputValueMonth + "/" + inputValueCountry + "/" + inputValueMagnitudeType + "/" + inputValueDeath + "/" + inputValueYearMin + "/" + inputValueYearMax)
+    d3.request("/filter/" + inputValueDate + "/" + inputValueMonth + "/" + inputValueCountry + "/" + inputValueMagnitudeType + "/" + inputValueDeath + "/" + inputValueYearMin + "/" + inputValueYearMax)
         .get(response => {
 
         data = JSON.parse(response.response);
