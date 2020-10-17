@@ -32,8 +32,8 @@ with open('data/earthquake.json') as f:
             earthquake.insert(row)
         except:
             print(row)
-            
-@app.route("/", methods=['GET'])
+
+@app.route("/", methods=['GET',"post"])
 def mainroute():
     return app.send_static_file("index.html")
 
