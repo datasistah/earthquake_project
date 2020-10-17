@@ -22,7 +22,7 @@ app.config["MONGO_URI"] = "mongodb+srv://admin:project2@cluster0.tbfxy.mongodb.n
 mongo = PyMongo(app)
 
 earthquake = mongo.db.earthquake
-earthquake.drop()
+# earthquake.drop()
 
 # with open('data/earthquake.json') as f:
 #     data = json.load(f)
@@ -32,11 +32,6 @@ earthquake.drop()
 #             earthquake.insert(row)
 #         except:
 #             print(row)
-
-with open('data/earthquake.json') as f:
-    data = json.load(f)
-    for row in data:
-        earthquake.insert_one(row)
 
 @app.route("/", methods=['GET',"post"])
 def mainroute():
