@@ -32,6 +32,10 @@ with open('data/earthquake.json') as f:
             earthquake.insert(row)
         except:
             print(row)
+            
+@app.route("/", methods=['GET'])
+def mainroute():
+    return app.send_static_file("index.html")
 
 @app.route("/all", methods=['GET'])
 @cross_origin()
