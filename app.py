@@ -24,14 +24,19 @@ mongo = PyMongo(app)
 earthquake = mongo.db.earthquake
 earthquake.drop()
 
+# with open('data/earthquake.json') as f:
+#     data = json.load(f)
+
+#     for row in data:
+#         try:    
+#             earthquake.insert(row)
+#         except:
+#             print(row)
+
 with open('data/earthquake.json') as f:
     data = json.load(f)
-
     for row in data:
-        try:    
-            earthquake.insert(row)
-        except:
-            print(row)
+        earthquake.insert_one(row)
 
 @app.route("/", methods=['GET',"post"])
 def mainroute():
