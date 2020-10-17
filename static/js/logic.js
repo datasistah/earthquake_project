@@ -3,7 +3,7 @@ function init() {
     d3.request("/all").get(response => {
 
         data = JSON.parse(response.response);
-
+        console.log(data);
         var yearNumber = [];
         var countryName = [];
         var monthName = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
