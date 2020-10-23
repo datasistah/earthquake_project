@@ -1,220 +1,376 @@
 <!DOCTYPE html>
 <html>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://kit.fontawesome.com/45b77e9515.js" crossorigin="anonymous"></script>
+<!------ Include the above in your HEAD tag ---------->
 
 <head>
-  <meta charset="utf-8">
-  <title>Project 2: Earthquakes</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <title>Project 2: Earthquakes</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <link rel="stylesheet" href="css/anime.css">
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
-  
-  <!-- <style>
-    div {
-      background-color: #c6e8eb;
-    }
-    </style> -->
-    
-    
-  <!-- Create Home Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #50327c;">
-    <div class="container-fluid">
-      <a class="navbar-brand" class="whitefont" href="index.html">Home</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+    <!-- Create Home Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #50327c;">
+        <div class="container-fluid">
+            <a class="navbar-brand" class="whitefont" href="index.html">Home</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-      <!-- Create dropdown Graphs Navbar -->
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-              aria-haspopup="true" aria-expanded="false">
-              Graphs</a>
-            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="heatmap.html">Magnitude Heatmap</a>
-              <a class="dropdown-item" href="scatter.html">Earthquake Count by Year</a>
-              <a class="dropdown-item" href="histogram.html">Magnitude Frequency</a>
-              <a class="dropdown-item" href="stacked.html">Magnitudes by Year & Class</a>
+            <!-- Create dropdown Graphs Navbar -->
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Graphs</a>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="heatmap.html">Magnitude Heatmap</a>
+                            <a class="dropdown-item" href="scatter.html">Earthquake Count by Year</a>
+                            <a class="dropdown-item" href="histogram.html">Magnitude Frequency</a>
+                            <a class="dropdown-item" href="stacked.html">Magnitudes by Year & Class</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">Project Dashboard</a>
+                    </li>
+                </ul>
             </div>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="about.html">About</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-
-  <!-- Page Title -->
-  <div class="wrapper">
-  
-    <div class="hero text-center">
-      
-      <!-- <h2>Earthquakes </h2> -->
-      <h1>
-        <span class="letter">E</span>
-        <span class="letter">A</span>
-        <span class="letter">R</span>
-        <span class="letter">T</span>
-        <span class="letter">H</span>
-        <span class="letter">Q</span>
-        <span class="letter">U</span>
-        <span class="letter">A</span>
-        <span class="letter">K</span>
-        <span class="letter">E</span>
-        <span class="letter">S</span>
-        <div></div>
-      </h1>
-        <br>
-      <h3>1600 - 2020</h3>
-      
-    </div>
-<br>
-    <!-- Filter Search -->
-    <div class="container">
-
-      <div class="row margin-top-50">
-        <div class="col-md-12">
-
-          <button class="btn btn-light btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true"
-            aria-expanded="false">
-            Location
-            <select id="country" type="text">
-              <option class="small" value="Select All">Select All</option>
-            </select>
-          </button>
-          <button class="btn btn-light btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true"
-            aria-expanded="false">
-            Year
-            <select id="datetime" type="text">
-              <option value="Select All">Select All</option>
-            </select>
-          </button>
-
-          <button class="btn btn-light btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true"
-            aria-expanded="false">
-            Year Range
-            <select id="yearmin" type="text">
-              <option value="Select All">Select All</option>
-            </select>
-            <select id="yearmax" type="text">
-              <option value="Select All">Select All</option>
-            </select>
-          </button>
-
-          <button class="btn btn-light btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true"
-            aria-expanded="false">
-            Month
-            <select id="month" type="text">
-              <option value="Select All">Select All</option>
-            </select>
-          </button>
-
-          <button class="btn btn-light btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true"
-            aria-expanded="false">
-            Magnitude Type
-            <select id="magnitude">
-              <option value="Select All">Select All</option>
-              <option value="minor">Minor (3-3.9)</option>
-              <option value="light">Light (4-4.9)</option>
-              <option value="moderate">Moderate (5-5.9)</option>
-              <option value="strong">Strong (6-6.9)</option>
-              <option value="major">Major (7-7.9)</option>
-              <option value="great">Great (8 or more)</option>
-            </select>
-          </button>
-
-          <button class="btn btn-light btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true"
-            aria-expanded="false">
-            Earthquake Related Deaths
-            <select id="death">
-              <option value="Select All">Select All</option>
-              <option value="yes">Yes</option>
-            </select>
-          </button>
         </div>
-        <button id="filter-btn" type="button" class="btn-default">Filter Data</button>
-        
-        <button id="filter-btn-clear" type="reset" class="btn-default">Clear Filters</button>
-        </form>
-      </div>
-    </div>
-  </div>
-  <!-- Heatmap Section -->
-  <div class="row">
-    <div id="heatmap" class="col-md-10 mx-auto">
-    </div>
-  </div>
-  <br>
+    </nav>
 
-  <!-- Filtered Data Summary Section (Cards) -->
-  <div class="row">
-    <div class="col-md-10 card-deck mx-auto">
-      <div class="bg-info card">
+    <!-- Page Title -->
+    <div class="wrapper">
 
-        <div class="card-body">
-          <h4 class="card-text text-center"><strong>Maximum Magnitude</strong></h4>
-          <p class="text-center"><strong>The magnitude is a number that characterizes the relative size of an earthquake.</strong></p>
-          <h2 id="maxmag" class="text-center card-title"></h2>
-        </div>
-      </div>
-      <div class="bg-info card">
+        <div class="hero text-center">
+            <br>
+            <h2>The Story Behind Our Project</h2>
+            <br>
 
-        <div class="card-body">
-          <h4 class="card-text text-center"><strong>Average Depth of Focus (km)</strong></h4>
-          <p class="text-center"><strong> The depth of focus or focal depth refers to how deep within the earth an earthquake occurs.</strong></p>
-          <h2 id="depth" class="text-center card-title"></h2>
+            <h4>Meet the Team</h4>
+            <br>
+
+            <style>
+                .card {
+                    position: relative;
+                    width: 50%;
+                }
+
+                .image {
+                    opacity: 1;
+                    display: block;
+                    width: 100%;
+                    height: auto;
+                    transition: .5s ease;
+                    backface-visibility: hidden;
+                }
+
+                .middle {
+                    transition: .5s ease;
+                    opacity: 0;
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    -ms-transform: translate(-50%, -50%);
+                    text-align: center;
+                }
+
+                .card:hover .image {
+                    opacity: 0.3;
+                }
+
+                .card:hover .middle {
+                    opacity: 1;
+                }
+
+                .text {
+                    background-color: #4CAF50;
+                    color: white;
+                    font-size: 16px;
+                    padding: 16px 32px;
+                }
+            </style>
+            </head>
+
+            <body>
 
 
-        </div>
-      </div>
-      <div class=" bg-info card">
-        <div class="card-body">
-          <h4 class="text-center card-text"><strong>Earthquake Count</strong></h4>
-          <p class="text-center"><strong>The earthquake count goes back as far 1600; however, it was noted that data was limited prior to 1900.</strong></p>
-          <h2 id="earthcount" class="text-center card-title"></h2>
-        </div>
-      </div>
-    </div>
-  </div>
 
-  <!-- Scatter and Histogram -->
-  <div class="row">
-    <div id="bar" class="col-md-5 mx-auto"></div>
-    <div id="histogram" class="col-md-5 mx-auto"></div>
-  </div>
+                <!-- <div class="card">
+                  <img src="StefaneeRichardson.jpg" alt="Stefanee Richardson" class="image" style="width:100%">
+                  <div class="middle">
+                    <div class="text">
+                        <h5 class="card-title"><a href="https://www.linkedin.com/in/stefanee-richardson-69629061/"
+                            target="_blank">Stefanee Richardson</a>
+                    </div>
+                  </div>
+                </div> -->
 
-  <div class="row">
-    <div class="col-md-11 mx-auto">
-      <div id="stackedbar"></div>
-    </div>
-  </div>
-  </div>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.5.0/d3.min.js"></script>
-  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/5.0.0/math.min.js"></script>
-  <script src="js/logic.js"></script>
-  <script src="anime-master/lib/anime.min.js"></script>
-  <script src="js/animation.js"></script>
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-  integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-  crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-  integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-  crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-  integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-  crossorigin="anonymous"></script>
-</body>
+
+
+
+
+
+                <div class="card-columns col d-flex justify-content-center">
+                    <div class="card">
+                        <img class="card-img-top" src="Images/MelodieVines_Fotor.jpg" alt="Melodie Vines">
+                        <div class="card-body">
+                            <h5 class="card-title"><a href="https://www.linkedin.com/in/melodiestaton/"
+                                    target="_blank">Melodie Vines</a>
+                            </h5>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img class="card-img-top" src="Images/TiffanyTeasley_Fotor.jpg" alt="Tiffany Teasley">
+                        <div class="card-body">
+                            <h5 class="card-title"><a href="https://www.linkedin.com/in/tiffany-teasley/"
+                                    target="_blank">Tiffany
+                                    Teasley</a></h5>
+                        </div>
+                    </div>
+
+
+
+                    <div class="card">
+                        <img class="card-img-top" src="Images/StefaneeRichardson_Fotor.jpg" alt="Stefanee Richardson">
+                        <div class="card-body">
+                            <h5 class="card-title"><a href="https://www.linkedin.com/in/stefanee-richardson-69629061/"
+                                    target="_blank">Stefanee Richardson</a>
+                            </h5>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img class="card-img-top" src="Images/MabelDuran-Sanchez_Fotor.jpg" alt="Mabel Duran-Sanchez">
+                        <div class="card-body">
+                            <h5 class="card-title"><a href="https://www.linkedin.com/in/mabelduransanchez/"
+                                    target="_blank">Mabel
+                                    Duran-Sanchez</a></h5>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- <br> -->
+
+                <center>***Interested in data consultation services? Contact us on LinkedIn!***</center>
+                <br>
+                <div class="container">
+
+
+                    <div style="background-color:rgba(238, 99, 6, 0.658);color:white;padding:20px;">
+                        <h2>Project Theme</h2>
+                        <p> Motivated by the <a
+                                href="https://www.usgs.gov/news/magnitude-51-earthquake-near-sparta-north-carolina"
+                                target="_blank">recent magnitude
+                                5.1 earthquake</a> which struck North Carolina on August 9th, 2020, we decided to take a
+                            look back
+                            in history and explore the frequency, magnitudes, and locations of these natural events.</p>
+                        <pAfter reviewing several datasets, we came across a dataset collecting data on significant
+                            earthquakes around the world since 1600 from the <a href="https://www.noaa.gov/"
+                            target="_blank">U.S.
+                            Department of
+                            Commerce,
+                            National Oceanic and Atmospheric Administration</a> available through <a
+                                href="https://www.kaggle.com/" target="_blank">Kaggle</a>. To view the dataset we
+                            utilized for this
+                            project, click
+                            <a href="https://www.kaggle.com/shekpaul/major-earthquakes-noaa?select=Information.txt"
+                                target="_blank">here</a>.</p>
+
+                            <!-- Magnitude Scale Table -->
+                            <style>
+                                table,
+                                th,
+                                td {
+                                    border: 1px solid black;
+                                    border-collapse: collapse;
+                                }
+
+                                th,
+                                td {
+                                    padding: 5px;
+                                    text-align: left;
+                                }
+                            </style>
+                            </head>
+
+                            <body>
+                                <h2>Earthquake Magnitude Scale</h2>
+                                <!-- <p>To add a caption to a table, use the caption tag.</p> -->
+                                <table style="width:100%">
+                                    <!-- <caption>Monthly savings</caption> -->
+                                    <tr>
+                                        <th>Magnitude</th>
+                                        <th>Earthquake Class</th>
+                                        <th>Earthquake Effects</th>
+                                    </tr>
+                                    <tr>
+                                        <td>8 or more</td>
+                                        <td>Great</td>
+                                        <td>Can totally destroy communities near the epicenter.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>7 to 7.9</td>
+                                        <td>Major</td>
+                                        <td>Serious damage.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>6 to 6.9</td>
+                                        <td>Strong</td>
+                                        <td>May cause a lot of damage in very populated areas.</td>
+                                    </tr>
+                                    </tr>
+                                    <tr>
+                                        <td>5 to 5.9</td>
+                                        <td>Moderate</td>
+                                        <td>Slight damage to buildings and other structures.</td>
+                                    </tr>
+                                    </tr>
+                                    <tr>
+                                        <td>4 to 4.9</td>
+                                        <td>Light</td>
+                                        <td>Often felt, but only causes minor damage.</td>
+                                    </tr>
+                                    </tr>
+                                    <tr>
+                                        <td>3 to 3.9</td>
+                                        <td>Minor</td>
+                                        <td>May feel like a passing truck.</td>
+                                    </tr>
+                                </table>
+                                <br>
+
+                                <p> See below for the steps we took to build the <a
+                                        href="about.html" target="_blank">Earthquake
+                                        Dashboard</a>. </p>
+                    </div>
+
+
+                    <!-- <p>
+                        Motivated by the <a
+                            href="https://www.usgs.gov/news/magnitude-51-earthquake-near-sparta-north-carolina"
+                            target="_blank">recent magnitude
+                            5.1 earthquake</a> which struck North Carolina on August 9th, 2020, we decided to take a
+                        look back
+                        in history and explore the frequency, magnitudes, and locations of these natural events.</p>
+                    <br>
+                    <p>After reviewing several datasets, we came across a dataset collecting data on significant
+                        earthquakes
+                        around the world since 1600 from the <a href="https://www.noaa.gov/" target="_blank">U.S.
+                            Department of
+                            Commerce,
+                            National Oceanic and Atmospheric Administration</a> available through <a
+                            href="https://www.kaggle.com/" target="_blank">Kaggle</a>. To view the dataset we
+                        utilized for this
+                        project, click
+                        <a href="https://www.kaggle.com/shekpaul/major-earthquakes-noaa?select=Information.txt"
+                            target="_blank">here</a>.</p> -->
+                    <br>
+
+                    <!------ Steps ---------->
+
+                    <div class="container">
+                        <h2>Steps</h2>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="main-timeline">
+                                    <a href="#" class="timeline">
+                                        <div class="timeline-icon"><i class="fas fa-broom"></i></div>
+                                        <div class="timeline-content">
+                                            <h3 class="title">Step 1: Data Preparation & Cleanup</h3>
+                                            <p class="description">
+                                                The data set consisted of key elements to allow us to dig deeper in to
+                                                global
+                                                earthquake trends dating back to 1600 though it was noted that the level
+                                                of
+                                                detail was limited prior to 1930. In an effort to better analyze the
+                                                data, we modified
+                                                the “Name” column which provides earthquake location information using
+                                                Python and decided to only keep the location name prior to the “:” which
+                                                most often is the country in this dataset, although in some instances it
+                                                refers to the state.
+                                            </p>
+                                        </div>
+                                    </a>
+                                    <a href="#" class="timeline">
+                                        <div class="timeline-icon"><i class="fas fa-server"></i></div>
+                                        <div class="timeline-content">
+                                            <h3 class="title">Step 2: Database & Server Setup</h3>
+                                            <p class="description">
+                                                Python Flask powered RESTful API, HTML/CSS, Javascript, and MongoDB were
+                                                utilized for the visualization. In our first python file
+                                                (datacleanup.py), preparation of data occurred including: cleansing of
+                                                the data, renaming a column and exporting the CSV file into a JSON file
+                                                to be utilized by MongoDB. Within the second Python file (app.py), one
+                                                route pulls all of the data from MongoDB to send to Javascript upon the
+                                                call to the route and the second route applies filters to the data based
+                                                on user selections. When a user selects one or more filters on the HTML
+                                                page, Javascript pulls those values and sends them in a request to
+                                                Python. In Python, using MongoDB the filters are applied and the
+                                                filtered data is then returned to Javascript. Regardless if the user
+                                                selects one or multiple filters, the logic can pull the data and send
+                                                the filtered data set to Javascript.
+                                            </p>
+                                        </div>
+                                    </a>
+                                    <a href="#" class="timeline">
+                                        <div class="timeline-icon"><i class="fas fa-file-code"></i></div>
+                                        <div class="timeline-content">
+                                            <h3 class="title">Step 3: HTML & CSS</h3>
+                                            <p class="description">
+                                                While the logic.js file helps us pull the information filtered by the
+                                                user, our HTML file renders it on the web. The CSS file, in addition to
+                                                Bootstrap, helps with the styling of the website and dashboard.
+                                            </p>
+                                        </div>
+                                    </a>
+                                    <a href="#" class="timeline">
+                                        <div class="timeline-icon"><i class="fas fa-hand-sparkles"></i></div>
+                                        <div class="timeline-content">
+                                            <h3 class="title">Step 4: FINAL TOUCHES</h3>
+                                            <p class="description">
+                                                We created 4 different types of visualizations (heatmap, scatter plot,
+                                                histogram, and stacked bar chart) to better showcase earthquake
+                                                occurrences
+                                                and magnitudes from 1600 - 2020 around the world.
+                                            </p>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                </div>
+
+
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.5.0/d3.min.js"></script>
+                <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/5.0.0/math.min.js"></script>
+                <script src="js/logic.js"></script>
+                <script src="js/animation.js"></script>
+                <script src="js/scramble.js"></script>
+                <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+                    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+                    crossorigin="anonymous"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+                    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+                    crossorigin="anonymous"></script>
+                <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+                    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+                    crossorigin="anonymous"></script>
+
+            </body>
 
 </html>

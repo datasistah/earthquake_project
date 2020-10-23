@@ -8,6 +8,7 @@ app = Flask(__name__, static_url_path='', static_folder='static')
 app.config["MONGO_URI"] = "mongodb+srv://admin:project2@cluster0.tbfxy.mongodb.net/earthquake_db?retryWrites=true&w=majority"
 mongo = PyMongo(app)
 earthquake = mongo.db.earthquake
+earthquake.drop()
 with open('data/earthquake.json') as f:
     data = json.load(f)
     for row in data:

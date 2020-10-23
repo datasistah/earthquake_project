@@ -22,7 +22,7 @@ app.config["MONGO_URI"] = "mongodb+srv://admin:project2@cluster0.tbfxy.mongodb.n
 mongo = PyMongo(app)
 
 earthquake = mongo.db.earthquake
-# earthquake.drop()
+#earthquake.drop()
 
 # with open('data/earthquake.json') as f:
 #     data = json.load(f)
