@@ -1,4 +1,4 @@
-# Project 2
+# Project 2: Earthquakes Around the World from 1600 -2020
 
 Team Members:
 
@@ -6,6 +6,8 @@ Stefanee Richardson: https://www.linkedin.com/in/stefanee-richardson-69629061/
 Tiffany Teasley: https://www.linkedin.com/in/tiffany-teasley/
 Mabel Duran-Sanchez: https://www.linkedin.com/in/mabelduransanchez/
 Melodie Vines: https://www.linkedin.com/in/melodiestaton/
+
+Launch the app: https://earthquakes1600-2020.herokuapp.com/
 
 Project Theme:
 
