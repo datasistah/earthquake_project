@@ -6,3 +6,4 @@ flask_pymongo
 flask_cors
 dnspython
 requests
+python-3.11.1
