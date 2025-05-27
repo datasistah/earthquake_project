@@ -217,12 +217,20 @@ function init() {
         var heatmapTrace = {
             lon: longitudeValues,
             lat: latitudeValues,
-            radius:10,
             z: magnitudeNumber,
-            type: "densitymapbox",
-            coloraxis: 'coloraxis',
-            hoverinfo: 'skip'
-        }
+            type: "scattermapbox",
+            mode: "markers",
+            marker: {
+                size: 6,
+                color: magnitudeNumber,
+                colorscale: "Viridis",
+                opacity: 0.8,
+                colorbar: {
+                    title: "Magnitude"
+                }
+            },
+            hovertemplate: 'Longitude: %{lon}<br>Latitude: %{lat}<br>Magnitude: %{z}<extra></extra>'
+        };
 
         var magnitudeMinorTrace = {
             x: yearArray,
@@ -285,9 +293,15 @@ function init() {
         };
 
         var heatMapLayout = {
-            mapbox: {center: {lon: -98.5795, lat: 39.8283}, style: "outdoors"},
-            coloraxis: {colorscale: "Viridis"}, title: {text: "Earthquake Magnitude"},
-            margin: {t: 30, b: 0}};
+            mapbox: {
+                center: {lon: 0, lat: 20},
+                zoom: 1.5,
+                style: "open-street-map"
+            },
+            title: {text: "Earthquake Magnitude Heatmap"},
+            margin: {t: 30, b: 0, l: 0, r: 0},
+            height: 500
+        };
 
         var magnitudeLayout = {
             title: "Earthquake Count by Year and Magnitude",
@@ -300,7 +314,7 @@ function init() {
 
         Plotly.newPlot('bar', barData, barLayout);
         Plotly.newPlot('histogram', histogramData, histogramLayout);
-        Plotly.newPlot('heatmap', heatMapdata, heatMapLayout, config);
+        Plotly.newPlot('heatmap', heatMapdata, heatMapLayout);
         Plotly.newPlot('stackedbar', magnitudeData, magnitudeLayout);
 
         });

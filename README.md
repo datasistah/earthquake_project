@@ -7,7 +7,45 @@ Team Members:
 - Mabel Duran-Sanchez: https://www.linkedin.com/in/mabelduransanchez/
 - Melodie Vines: https://www.linkedin.com/in/melodiestaton/
 
-Launch the app: https://earthquakes1600-2020.herokuapp.com/
+# Earthquake Dashboard (1600-2020)
+
+## Overview
+This interactive dashboard visualizes earthquake data from 1600 to 2020 around the world, allowing users to explore frequency, magnitudes, and locations of these natural events through various visualizations.
+
+## Features
+- **Interactive Visualizations**: Heatmap, scatter plots, histograms, and stacked bar charts
+- **Data Filtering**: Filter earthquakes by year, month, location, magnitude, and more
+- **Responsive Design**: Mobile-friendly interface
+
+## Live Demo
+View the live dashboard at: [https://YOUR_GITHUB_USERNAME.github.io/earthquake_project](https://YOUR_GITHUB_USERNAME.github.io/earthquake_project) (Update this URL after deployment)
+
+## How to Use
+1. Visit the dashboard
+2. Explore different visualizations using the navigation menu
+3. Use the filters to customize the data view
+4. Hover over data points for detailed information
+
+## Local Development
+To run this project locally:
+```bash
+# Clone repository
+git clone https://github.com/YOUR_GITHUB_USERNAME/earthquake_project.git
+
+# Navigate to project directory
+cd earthquake_project
+
+# If you need the backend API
+python app.py
+```
+
+## Technologies Used
+- **Frontend**: HTML, CSS, JavaScript, D3.js, Plotly.js
+- **Backend**: Flask (Python) with SQLite database
+- **Data Source**: NOAA Earthquake Dataset
+
+## Dataset
+Original data from the U.S. Department of Commerce, National Oceanic and Atmospheric Administration, available through [Kaggle](https://www.kaggle.com/shekpaul/major-earthquakes-noaa?select=Information.txt).
 
 Project Theme:
 
@@ -47,3 +85,50 @@ Final Visualizations:
 - Histogram: Our histogram titled Earthquake Magnitude Count showcases the total number of earthquakes per Richter Scale magnitude class during the time period under study (1600 - 2020). According to the dataset, earthquakes at 7.5 magnitude seem to be the most frequent throughout this time period with 250 counts. The second most frequent Richter Magnitude class is 6 with 198 counts of occurrences.
 
 - Stacked Bar Chart: Our stacked bar chart titled Earthquake Count by Year and Magnitude combines the analysis from the scatter plot and the histogram and brings it together into a single visualization. This chart showcases the number of earthquakes throughout the time period under study (1600 - 2020) according to each of the Richter Scale magnitude classes while also counting each of those occurrences.
+
+## Deployment to Vercel
+
+This project is configured to be deployed to Vercel's free hobby tier.
+
+### Steps to deploy:
+
+1. Create a [Vercel account](https://vercel.com/signup) if you don't already have one
+2. Install the Vercel CLI:
+   ```
+   npm i -g vercel
+   ```
+3. Login to Vercel:
+   ```
+   vercel login
+   ```
+4. Deploy the project:
+   ```
+   vercel
+   ```
+5. For production deployment:
+   ```
+   vercel --prod
+   ```
+
+The project has a `vercel.json` file that configures it to run on Vercel's Python runtime.
+
+### Local Development (Alternative Method)
+
+1. Clone the repository
+2. Install dependencies:
+   ```
+   pip install -r requirements.txt
+   ```
+3. Run the data loader to create and populate the SQLite database:
+   ```
+   python load_to_sqlite.py
+   ```
+4. Export data to a static JSON file (needed for Vercel deployment):
+   ```
+   python export_data.py
+   ```
+5. Run the Flask application:
+   ```
+   python app.py
+   ```
+6. Access the application at http://localhost:5000

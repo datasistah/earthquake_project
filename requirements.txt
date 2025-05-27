@@ -1,8 +1,8 @@
 flask
 gunicorn
-whitenoise
-bson
-flask_pymongo
 flask_cors
+python-dotenv
+bson
+pymongo
 dnspython
 requests

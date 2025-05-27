@@ -323,26 +323,29 @@ function filterselect() {
 
     d3.event.preventDefault();
 
+    function safeValue(val) {
+        return (val === undefined || val === null || val === "") ? "Select All" : val;
+    }
     var inputElementYear = d3.select("#datetime");
-    var inputValueDate = inputElementYear.property("value");
+    var inputValueDate = safeValue(inputElementYear.property("value"));
 
     var inputElementMonth = d3.select("#month");
-    var inputValueMonth = inputElementMonth.property("value");
+    var inputValueMonth = safeValue(inputElementMonth.property("value"));
 
     var inputElementCountry = d3.select("#country");
-    var inputValueCountry = inputElementCountry.property("value");
+    var inputValueCountry = safeValue(inputElementCountry.property("value"));
 
     var inputElementMagnitudeType = d3.select("#magnitude");
-    var inputValueMagnitudeType = inputElementMagnitudeType.property("value");
+    var inputValueMagnitudeType = safeValue(inputElementMagnitudeType.property("value"));
 
     var inputElementDeath = d3.select("#death");
-    var inputValueDeath = inputElementDeath.property("value");
+    var inputValueDeath = safeValue(inputElementDeath.property("value"));
 
     var inputElementYearMin = d3.select("#yearmin");
-    var inputValueYearMin = inputElementYearMin.property("value");
+    var inputValueYearMin = safeValue(inputElementYearMin.property("value"));
 
     var inputElementYearMax = d3.select("#yearmax");
-    var inputValueYearMax = inputElementYearMax.property("value");  
+    var inputValueYearMax = safeValue(inputElementYearMax.property("value"));  
 
     var data = [];
     d3.request("/filter/" + inputValueDate + "/" + inputValueMonth + "/" + inputValueCountry + "/" + inputValueMagnitudeType + "/" + inputValueDeath + "/" + inputValueYearMin + "/" + inputValueYearMax)
