@@ -18,7 +18,7 @@ This interactive dashboard visualizes earthquake data from 1600 to 2020 around t
 - **Responsive Design**: Mobile-friendly interface
 
 ## Live Demo
-View the live dashboard at: [https://YOUR_GITHUB_USERNAME.github.io/earthquake_project](https://YOUR_GITHUB_USERNAME.github.io/earthquake_project) (Update this URL after deployment)
+View the live dashboard at: [https://earthquake-project-kappa.vercel.app/](https://earthquake-project-kappa.vercel.app/)
 
 ## How to Use
 1. Visit the dashboard
