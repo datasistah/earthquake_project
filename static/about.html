@@ -6,12 +6,112 @@
   <title>Project 2: Earthquakes</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
   <link rel="stylesheet" href="css/anime.css">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+    .filter-card {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      border-radius: 15px;
+      padding: 25px;
+      margin-bottom: 30px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      color: white;
+    }
+    .filter-label {
+      font-weight: 600;
+      margin-bottom: 8px;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    .form-select, .form-control {
+      border-radius: 10px;
+      border: 2px solid rgba(255,255,255,0.3);
+      background: rgba(255,255,255,0.9);
+      padding: 10px 15px;
+      transition: all 0.3s ease;
+    }
+    .form-select:focus, .form-control:focus {
+      border-color: #fff;
+      box-shadow: 0 0 0 0.25rem rgba(255,255,255,0.25);
+      background: #fff;
+    }
+    .btn-modern {
+      border-radius: 25px;
+      padding: 12px 30px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      transition: all 0.3s ease;
+      border: none;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    }
+    .btn-modern:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+    }
+    .stat-card {
+      border-radius: 15px;
+      transition: all 0.3s ease;
+      border: none;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    }
+    .stat-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    }
+    .stat-icon {
+      font-size: 3rem;
+      opacity: 0.2;
+      position: absolute;
+      right: 20px;
+      top: 20px;
+    }
+    .stat-value {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #2c3e50;
+    }
+    .loading-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.5);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+    }
+    .loading-spinner {
+      width: 50px;
+      height: 50px;
+      border: 5px solid #f3f3f3;
+      border-top: 5px solid #667eea;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    .range-slider {
+      width: 100%;
+    }
+    .range-value {
+      background: rgba(255,255,255,0.2);
+      padding: 5px 10px;
+      border-radius: 5px;
+      display: inline-block;
+      margin-top: 5px;
+      font-size: 0.9rem;
+    }
+  </style>
 </head>
 
 <body>
@@ -24,29 +124,35 @@
     
     
   <!-- Create Home Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #50327c;">
+  <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #50327c;">
     <div class="container-fluid">
-      <a class="navbar-brand" class="whitefont" href="index.html">Home</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      <a class="navbar-brand text-white" href="index.html">
+        <i class="bi bi-house-fill"></i> Home
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
 
       <!-- Create dropdown Graphs Navbar -->
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav ml-auto">
+        <ul class="navbar-nav ms-auto">
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-              aria-haspopup="true" aria-expanded="false">
-              Graphs</a>
-            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="heatmap.html">Magnitude Heatmap</a>
-              <a class="dropdown-item" href="scatter.html">Earthquake Count by Year</a>
-              <a class="dropdown-item" href="histogram.html">Magnitude Frequency</a>
-              <a class="dropdown-item" href="stacked.html">Magnitudes by Year & Class</a>
-            </div>
-            <li class="nav-item">
-              <a class="nav-link" href="about.html">Project Dashboard</a>
+            <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              <i class="bi bi-graph-up"></i> Graphs
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="heatmap.html"><i class="bi bi-map"></i> Magnitude Heatmap</a></li>
+              <li><a class="dropdown-item" href="scatter.html"><i class="bi bi-scatter"></i> Earthquake Count by Year</a></li>
+              <li><a class="dropdown-item" href="histogram.html"><i class="bi bi-bar-chart"></i> Magnitude Frequency</a></li>
+              <li><a class="dropdown-item" href="stacked.html"><i class="bi bi-bar-chart-steps"></i> Magnitudes by Year & Class</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active text-white" href="about.html">
+              <i class="bi bi-speedometer2"></i> Project Dashboard
+            </a>
           </li>
         </ul>
       </div>
@@ -80,140 +186,205 @@
 <br>
     <!-- Filter Search -->
     <div class="container">
+      <div class="filter-card">
+        <h4 class="mb-4"><i class="bi bi-funnel-fill"></i> Filter Earthquake Data</h4>
+        <div class="row g-3">
+          <div class="col-md-6">
+            <label class="filter-label"><i class="bi bi-geo-alt-fill"></i> Location</label>
+            <select id="country" class="form-select">
+              <option value="Select All">All Locations</option>
+            </select>
+          </div>
 
-      <div class="row margin-top-50">
-        <div class="col-md-12">
+          <div class="col-md-3">
+            <label class="filter-label"><i class="bi bi-calendar-fill"></i> Specific Year</label>
+            <select id="datetime" class="form-select">
+              <option value="Select All">All Years</option>
+            </select>
+          </div>
 
-          <button class="btn btn-light btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true"
-            aria-expanded="false">
-            Location
-            <select id="country" type="text">
-              <option class="small" value="Select All">Select All</option>
+          <div class="col-md-3">
+            <label class="filter-label"><i class="bi bi-calendar-range-fill"></i> Month</label>
+            <select id="month" class="form-select">
+              <option value="Select All">All Months</option>
             </select>
-          </button>
-          <button class="btn btn-light btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true"
-            aria-expanded="false">
-            Year
-            <select id="datetime" type="text">
-              <option value="Select All">Select All</option>
-            </select>
-          </button>
+          </div>
 
-          <button class="btn btn-light btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true"
-            aria-expanded="false">
-            Year Range
-            <select id="yearmin" type="text">
-              <option value="Select All">Select All</option>
-            </select>
-            <select id="yearmax" type="text">
-              <option value="Select All">Select All</option>
-            </select>
-          </button>
+          <div class="col-md-6">
+            <label class="filter-label"><i class="bi bi-calendar-week-fill"></i> Year Range</label>
+            <div class="row g-2">
+              <div class="col-6">
+                <select id="yearmin" class="form-select">
+                  <option value="Select All">From Year</option>
+                </select>
+              </div>
+              <div class="col-6">
+                <select id="yearmax" class="form-select">
+                  <option value="Select All">To Year</option>
+                </select>
+              </div>
+            </div>
+          </div>
 
-          <button class="btn btn-light btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true"
-            aria-expanded="false">
-            Month
-            <select id="month" type="text">
-              <option value="Select All">Select All</option>
+          <div class="col-md-3">
+            <label class="filter-label"><i class="bi bi-activity"></i> Magnitude Type</label>
+            <select id="magnitude" class="form-select">
+              <option value="Select All">All Magnitudes</option>
+              <option value="minor">🟢 Minor (3-3.9)</option>
+              <option value="light">🟡 Light (4-4.9)</option>
+              <option value="moderate">🟠 Moderate (5-5.9)</option>
+              <option value="strong">🟠 Strong (6-6.9)</option>
+              <option value="major">🔴 Major (7-7.9)</option>
+              <option value="great">🔴 Great (8+)</option>
             </select>
-          </button>
+          </div>
 
-          <button class="btn btn-light btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true"
-            aria-expanded="false">
-            Magnitude Type
-            <select id="magnitude">
-              <option value="Select All">Select All</option>
-              <option value="minor">Minor (3-3.9)</option>
-              <option value="light">Light (4-4.9)</option>
-              <option value="moderate">Moderate (5-5.9)</option>
-              <option value="strong">Strong (6-6.9)</option>
-              <option value="major">Major (7-7.9)</option>
-              <option value="great">Great (8 or more)</option>
+          <div class="col-md-3">
+            <label class="filter-label"><i class="bi bi-exclamation-triangle-fill"></i> Deaths Recorded</label>
+            <select id="death" class="form-select">
+              <option value="Select All">All Events</option>
+              <option value="yes">With Deaths</option>
             </select>
-          </button>
+          </div>
 
-          <button class="btn btn-light btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true"
-            aria-expanded="false">
-            Earthquake Related Deaths
-            <select id="death">
-              <option value="Select All">Select All</option>
-              <option value="yes">Yes</option>
-            </select>
-          </button>
+          <div class="col-12 text-center mt-4">
+            <button id="filter-btn" type="button" class="btn btn-light btn-modern me-2">
+              <i class="bi bi-search"></i> Apply Filters
+            </button>
+            <button id="filter-btn-clear" type="reset" class="btn btn-outline-light btn-modern">
+              <i class="bi bi-x-circle"></i> Clear Filters
+            </button>
+          </div>
         </div>
-        <button id="filter-btn" type="button" class="btn-default">Filter Data</button>
-        
-        <button id="filter-btn-clear" type="reset" class="btn-default">Clear Filters</button>
-        </form>
       </div>
     </div>
+  </div>
+  
+  <!-- Loading Overlay -->
+  <div class="loading-overlay" id="loadingOverlay">
+    <div class="loading-spinner"></div>
   </div>
   <!-- Heatmap Section -->
-  <div class="row">
-    <div id="heatmap" class="col-md-10 mx-auto" style="height: 500px; width: 100%;">
+  <div class="container mb-4">
+    <div class="card shadow-lg border-0">
+      <div class="card-header bg-primary text-white">
+        <h5 class="mb-0"><i class="bi bi-map"></i> Global Earthquake Magnitude Map</h5>
+      </div>
+      <div class="card-body p-0">
+        <div id="heatmap" style="height: 500px; width: 100%;"></div>
+      </div>
     </div>
   </div>
-  <br>
 
   <!-- Filtered Data Summary Section (Cards) -->
-  <div class="row">
-    <div class="col-md-10 card-deck mx-auto">
-      <div class="bg-info card">
-
-        <div class="card-body">
-          <h4 class="card-text text-center"><strong>Maximum Magnitude</strong></h4>
-          <p class="text-center"><strong>The magnitude is a number that characterizes the relative size of an earthquake.</strong></p>
-          <h2 id="maxmag" class="text-center card-title"></h2>
+  <div class="container mb-4">
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="card stat-card bg-gradient" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+          <div class="card-body text-white position-relative">
+            <i class="bi bi-activity stat-icon"></i>
+            <h6 class="card-subtitle mb-2 text-white-50">Maximum Magnitude</h6>
+            <div class="stat-value" id="maxmag">--</div>
+            <p class="card-text mt-2 small">The magnitude characterizes the relative size of an earthquake</p>
+          </div>
         </div>
       </div>
-      <div class="bg-info card">
-
-        <div class="card-body">
-          <h4 class="card-text text-center"><strong>Average Depth of Focus (km)</strong></h4>
-          <p class="text-center"><strong> The depth of focus or focal depth refers to how deep within the earth an earthquake occurs.</strong></p>
-          <h2 id="depth" class="text-center card-title"></h2>
-
-
+      
+      <div class="col-md-4">
+        <div class="card stat-card bg-gradient" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+          <div class="card-body text-white position-relative">
+            <i class="bi bi-arrow-down-circle stat-icon"></i>
+            <h6 class="card-subtitle mb-2 text-white-50">Average Depth (km)</h6>
+            <div class="stat-value" id="depth">--</div>
+            <p class="card-text mt-2 small">The focal depth refers to how deep within the earth an earthquake occurs</p>
+          </div>
         </div>
       </div>
-      <div class=" bg-info card">
-        <div class="card-body">
-          <h4 class="text-center card-text"><strong>Earthquake Count</strong></h4>
-          <p class="text-center"><strong>The earthquake count goes back as far 1600; however, it was noted that data was limited prior to 1900.</strong></p>
-          <h2 id="earthcount" class="text-center card-title"></h2>
+      
+      <div class="col-md-4">
+        <div class="card stat-card bg-gradient" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
+          <div class="card-body text-white position-relative">
+            <i class="bi bi-graph-up-arrow stat-icon"></i>
+            <h6 class="card-subtitle mb-2 text-white-50">Earthquake Count</h6>
+            <div class="stat-value" id="earthcount">--</div>
+            <p class="card-text mt-2 small">Total earthquakes recorded (data limited prior to 1900)</p>
+          </div>
         </div>
       </div>
     </div>
   </div>
 
   <!-- Scatter and Histogram -->
-  <div class="row">
-    <div id="bar" class="col-md-5 mx-auto"></div>
-    <div id="histogram" class="col-md-5 mx-auto"></div>
+  <div class="container mb-4">
+    <div class="row g-4">
+      <div class="col-md-6">
+        <div class="card shadow-lg border-0">
+          <div class="card-header bg-success text-white">
+            <h5 class="mb-0"><i class="bi bi-scatter"></i> Earthquake Count by Year</h5>
+          </div>
+          <div class="card-body p-0">
+            <div id="bar"></div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="card shadow-lg border-0">
+          <div class="card-header bg-warning text-dark">
+            <h5 class="mb-0"><i class="bi bi-bar-chart"></i> Magnitude Frequency</h5>
+          </div>
+          <div class="card-body p-0">
+            <div id="histogram"></div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 
-  <div class="row">
-    <div class="col-md-11 mx-auto">
-      <div id="stackedbar"></div>
+  <div class="container mb-4">
+    <div class="card shadow-lg border-0">
+      <div class="card-header bg-info text-white">
+        <h5 class="mb-0"><i class="bi bi-bar-chart-steps"></i> Earthquake Distribution by Year and Magnitude Class</h5>
+      </div>
+      <div class="card-body p-0">
+        <div id="stackedbar"></div>
+      </div>
     </div>
   </div>
   </div>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.5.0/d3.min.js"></script>
   <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/5.0.0/math.min.js"></script>
-  <script src="js/logic.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script src="anime-master/lib/anime.min.js"></script>
   <script src="js/animation.js"></script>
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-  integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-  crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-  integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-  crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-  integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-  crossorigin="anonymous"></script>
+  <script src="js/logic.js"></script>
+  <script>
+    // Add loading animation for filter button
+    document.getElementById('filter-btn').addEventListener('click', function() {
+      document.getElementById('loadingOverlay').style.display = 'flex';
+      setTimeout(() => {
+        document.getElementById('loadingOverlay').style.display = 'none';
+      }, 1000);
+    });
+
+    // Add smooth scroll and animation effects
+    document.addEventListener('DOMContentLoaded', function() {
+      // Animate stat cards on load
+      const statCards = document.querySelectorAll('.stat-card');
+      statCards.forEach((card, index) => {
+        setTimeout(() => {
+          card.style.opacity = '0';
+          card.style.transform = 'translateY(20px)';
+          card.style.transition = 'all 0.5s ease';
+          setTimeout(() => {
+            card.style.opacity = '1';
+            card.style.transform = 'translateY(0)';
+          }, 100);
+        }, index * 100);
+      });
+    });
+  </script>
 </body>
 
 </html>
